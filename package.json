@@ -1,5 +1,10 @@
 {
+  "name": "facanada",
   "private": true,
+  "engines": {
+    "node": ">=14.0"
+  },
+  "engineStrict": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
