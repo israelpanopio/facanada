@@ -14,7 +14,7 @@ const WidgetCard = ({ post }) => {
         backgroundImage: `url('${post.featuredImage.url}')`
     }}>
     <Title><h3>{post.title}</h3></Title>
-    <Author><FaCalendarWeek />{moment(post.createdAt).format('MMM DD, YYYY')}</Author></ImagePreview>
+    <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></ImagePreview>
   </PostCardItem>)
 }
 
@@ -37,8 +37,4 @@ const ImagePreview = styled(Link)`
   background-position: center;
   margin: 0px;
   border-radius: 10px;
-  
-  &:hover{
-  border-bottom: 3px solid white;
-}
 `

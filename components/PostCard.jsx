@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
       href={`/post/${post.slug}`}
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <Title></Title>
-      <Author><FaCalendarWeek />{moment(post.createdAt).format('MMM DD, YYYY')}</Author>
+      <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
     </ImagePreview>
     <h2>{post.title}</h2>
     <Excerpt>`${(post.content.markdown).slice(0, 200)}...`</Excerpt>
@@ -29,7 +29,7 @@ const Title = styled.div`
   text-align: center;
   background-color: white;
   opacity: 80%;
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
   transform: translateY(-90%);
   border-radius: 10px;
 `
@@ -53,13 +53,7 @@ const ImagePreview = styled(Link)`
   background-position: center;
   margin: 0px;
   border-radius: 10px;
-  
-  &:hover{
-  border-bottom: 3px solid white;
-}
 `
-
-
 const Excerpt = styled.p`
   max-width:95%;
   margin: 0 auto;

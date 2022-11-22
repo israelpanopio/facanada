@@ -69,7 +69,17 @@ grid-template-columns: 1fr 1fr;
 @media screen and (max-width: 600px) {
     grid-template-columns: 1fr;
 }
+`
 
+export const TogglePageRight = styled.div`
+  text-align: right;
+  font-size:18px;
+  height: 30px;
+`
+export const TogglePageLeft = styled.div`
+  text-align: Left;
+  font-size:18px;
+  height: 30px;
 `
 
 //Sidebar---------------------------------

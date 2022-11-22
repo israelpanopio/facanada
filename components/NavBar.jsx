@@ -128,6 +128,7 @@ margin-right: -22px;
 `
 
 export const NavItem = styled.li`
+    align-items: center;
 `
 
 const NavLink = styled(Link)`
@@ -142,7 +143,7 @@ font-size: 16px;
 font-weight: bold;
 
 &:hover {
-background-color: #fff;
+background-color: red;
 color: #000;
 transition: 0.2s ease-in-out;
 padding-top: 7px;

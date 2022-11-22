@@ -61,8 +61,8 @@ export const CloseIcon = styled(FaTimes)`
 
 export const Icon = styled.div`
     position: absolute;
-    top: 3rem;
-    right: 3rem;
+    top: 1rem;
+    right: 1rem;
     background: transparent;
     font-size: 2rem;
     cursor: pointer;
@@ -81,7 +81,9 @@ export const Icon = styled.div`
 
 
 const SideBarWrapper = styled.div`
-color: #fff;
+    color: #fff;
+    width: 90%;
+    margin-ledt: 5%;
 `
 
 const SideBarMenu = styled.ul`

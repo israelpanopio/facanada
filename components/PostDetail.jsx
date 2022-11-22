@@ -9,7 +9,7 @@ const PostDetail = ({ post }) => {
   return (
     <div>
       <FeaturedImage src={post.featuredImage.url} />
-      <Author><FaCalendarWeek />{moment(post.createdAt).format('MMM DD, YYYY')}</Author>  
+      <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
       <RichText content={post.content.raw.children} />
     </div>

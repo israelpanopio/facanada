@@ -21,7 +21,7 @@ return (
     <Body>
       <Col>
         <PostDetail post={post} />
-        {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} /> */}
+        {/* <AdjacentPosts slug={post.slug} publishedAt={post.publishedAt} /> */}
       </Col>
       <Col>
         <SidebarNav>
