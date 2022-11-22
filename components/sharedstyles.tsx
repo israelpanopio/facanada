@@ -1,54 +1,82 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
   padding: 0 0.5rem;
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  min-height: 100vh;
+  max-width: 1100px;
+  margin: auto auto auto auto;
+
+@media  screen and (max-width: 1100px) {
+    max-width: 95%;
+}
 `
-const Main = styled.main`
-  padding: 5rem 0;
+export const Main = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 90%;
+  margin: auto;
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   text-decoration: none;
-
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
-  }
 `
 
-const Description = styled.p`
+export const Description = styled.p`
   text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
-`
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 1rem;
 `
 
-export { Container, Main, Title, Description, CodeTag }
+// Body------------------------------------
+export const Body = styled.div`
+display: grid;
+grid-template-columns: 3fr 1fr;
+width: 100%;
+
+
+@media screen and (max-width: 900px) {
+grid-template-columns: 1fr;
+}
+`
+export const Col = styled.div`
+max-width: 99%;
+display: inline;
+`
+
+export const Author = styled.p`
+  font-size: 13px;
+  margin: 0px; 
+  text-align: right;
+  background-color: white;
+  opacity: 80%;
+`
+
+//Page--------------------
+
+export const Row = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+@media screen and (max-width: 1158px) {
+    max-width: 99%;
+    margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+}
+
+`
+
+//Sidebar---------------------------------
+export const SidebarNav = styled.nav`
+    position: sticky;
+    top: 80px;
+    z-index: 5;
+    margin-top: 3rem;
+`
+
