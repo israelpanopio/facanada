@@ -15,7 +15,7 @@ const PostCard = ({ post }) => {
       <Author><FaCalendarWeek />{moment(post.createdAt).format('MMM DD, YYYY')}</Author>
     </ImagePreview>
     <h2>{post.title}</h2>
-    <Excerpt>`${(post.content.markdown).slice(0, 300)}...`</Excerpt>
+    <Excerpt>`${(post.content.markdown).slice(0, 200)}...`</Excerpt>
     <MobileExcerpt>`${(post.content.markdown).slice(0, 160)}...`</MobileExcerpt>
     
   </PostCardItem>)

@@ -8,25 +8,18 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 *************************************************************** */
 
 // export a default function for API route to work
-export default async function asynchandler(req, res) {
-  const graphQLClient = new GraphQLClient((graphqlAPI), {
-    headers: {
-      authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
-    },
-  });
-
-//   const query = gql`
-//     mutation CreateComment($name: String!, $email: String!, $comment: String!, $slug: String!) {
-//       createComment(data: {name: $name, email: $email, comment: $comment, post: {connect: {slug: $slug}}}) { id }
-//     }
-//   `;
-
-//   const result = await graphQLClient.request(query, {
-//     name: req.body.name,
-//     email: req.body.email,
-//     comment: req.body.comment,
-//     slug: req.body.slug,
-//   });
-
-//   return res.status(200).send(result);
-}
+export default async function handler(req, res) {
+    // Check for secret to confirm this is a valid request
+    if (req.query.secret !== process.env.GRAPHCMS_TOKEN) {
+      return res.status(401).json({ message: 'Invalid token' });
+    }
+  
+    try {
+      await res.revalidate('/post/1');
+      return res.json({ revalidated: true });
+    } catch (err) {
+      // If there was an error, Next.js will continue
+      // to show the last successfully generated page
+      return res.status(500).send('Error revalidating');
+    }
+  }
