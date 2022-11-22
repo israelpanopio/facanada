@@ -50,6 +50,7 @@ export async function getStaticProps({ params }) {
       posts,
       news,
       category: theCategories.find((({ slug }) => slug === params.slug )) },
+      revalidate: 1,
   };
 }
 
