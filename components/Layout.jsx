@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Head from 'next/head';
 import { NavBar, Togglebar } from '../components';
 import { Container } from './sharedstyles';
+import Script from "next/script";
 
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
