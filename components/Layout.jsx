@@ -17,6 +17,8 @@ const Layout = ({ children }) => {
         <meta name="Filipinos Aspiring to Canada" content="by Israel Panopio" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>
+        <meta property="fb:app_id" content="366180864923538" />
+        <meta property="fb:admins" content="empoyan"/>
       </Head>
       <Togglebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
