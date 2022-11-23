@@ -4,7 +4,7 @@ import moment from 'moment';
 import Link from 'next/link';
 import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
-import { Author } from './sharedstyles';
+import { Author, AuthorDiv } from './sharedstyles';
 
 const PostCard = ({ post }) => {
   return (<PostCardItem>
@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
       href={`/post/${post.slug}`}
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <Title></Title>
-      <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
+      <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
     </ImagePreview>
     <h2>{post.title}</h2>
     <Excerpt>`${(post.content.markdown).slice(0, 200)}...`</Excerpt>

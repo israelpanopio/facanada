@@ -48,13 +48,16 @@ max-width: 99%;
 display: inline;
 `
 
-export const Author = styled.p`
-  font-size: 13px;
-  margin: 0px; 
-  text-align: right;
-  background-color: white;
-  opacity: 80%;
+export const AuthorDiv = styled.div`
 `
+ export const Author = styled.p`
+ background-color: white;
+ opacity: 80%;
+ font-size: 13px;
+ margin: auto; 
+ padding: 2px 6px 0 6px;
+ float:right;
+ `
 
 //Page--------------------
 
