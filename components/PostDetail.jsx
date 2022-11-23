@@ -6,6 +6,7 @@ import { Author } from './sharedstyles';
 import { FaCalendarWeek } from 'react-icons/fa';
 
 const PostDetail = ({ post }) => {
+
   return (
     <div>
       <FeaturedImage src={post.featuredImage.url} />

@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
+
     &:hover {
       color: red;
       }
@@ -17,7 +18,13 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-size: 20px;
     line-height: 1.65em;
+  }  
+  
+  li {
+    font-size: 20px;
+    line-height: 1.65em;
   }
+
 
   img {
     max-width: 95%;

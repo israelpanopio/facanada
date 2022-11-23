@@ -199,6 +199,7 @@ export const getPostDetails = async (slug) => {
                 content {
                     raw
                     markdown
+                    html
                 }
             }            
         }
