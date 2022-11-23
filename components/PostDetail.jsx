@@ -10,10 +10,12 @@ const PostDetail = ({ post }) => {
 
   return (
     <div>
+    <InFeedAds />        
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
       <RichText content={post.content.raw.children} />
+        <GoogleAds />
       <PostComments slug={post.slug} />
     </div>
   )

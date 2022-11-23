@@ -12,6 +12,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-4841621324421656"
+        strategy="beforeInteractive"
+        async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
       <Head>
         <title>Filipinos Aspiring to Canada</title>
         <meta name="Filipinos Aspiring to Canada" content="by Israel Panopio" />

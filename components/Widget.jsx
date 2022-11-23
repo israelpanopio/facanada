@@ -22,12 +22,14 @@ const Widget = ({ categories, slug }) => {
 
   return (
     <Col>
+      <HideAds><InFeedAds /></HideAds>
       <SidebarNav>
         <h4>{slug ? 'Related Posts' : 'Recent Posts'}</h4>
         {relatedPosts.map((post, index ) => (
               <WidgetCard key={index} post={post} title={post.title} />
             ))}
         <p></p>
+        <InFeedAds />
       </SidebarNav>
     </Col>
   )

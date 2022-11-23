@@ -8,3 +8,5 @@ export { default as Widget } from './Widget';
 export { default as WidgetCard } from './WidgetCard';
 export { default as FeaturedPosts } from './FeaturedPosts';
 export { PostComments, DiscussionComments } from './CommentSection';
+export { default as GoogleAds } from './GoogleAds';
+export { default as InFeedAds } from './InFeedAds';
