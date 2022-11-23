@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
 import { Col } from './sharedstyles';
-import { WidgetCard } from '../components';
+import { WidgetCard, InFeedAds } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
