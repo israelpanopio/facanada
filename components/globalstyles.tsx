@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
   img {
     max-width: 95%;
     height: auto;
+    border-radius: 8px; 
   }
 
   h2{
