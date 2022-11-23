@@ -12,7 +12,6 @@ export default function About() {
         <CategoryTitle>About Us</CategoryTitle>
         <TogglePageLeft><Link  href="/"><FaRegHandPointLeft /> Back to Home</Link></TogglePageLeft>
         <AboutUs />
-        <Comments />
       </Col>
       <Col>
         <SidebarNav>
@@ -59,9 +58,28 @@ const AboutUs = () => {
     <p><i>Have a great day everyone!!</i></p>
     <p><i>We're hoping for the best for you and to see you in Canada.</i></p>
     <p></p>
-    <p><Link href="https://www.facebook.com/groups/cadreamers/">CLICK HERE TO JOIN THE GROUP</Link></p>
+    <Group />
     <p></p>
 </>)}
+
+const Group = () => {
+  return(<>
+    <Script
+      id="fb-root" 
+      async defer crossOrigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=366180864923538&autoLogAppEvents=1" 
+      nonce="MS2pv2xb"
+    />
+      <div className="fb-group" 
+        data-href="https://www.facebook.com/groups/cadreamers/" 
+        data-width="100%" 
+        data-show-metadata="false">
+          <blockquote cite="https://www.facebook.com/groups/cadreamers/" 
+            className="fb-xfbml-parse-ignore">
+              Filipino Aspirants to Canada
+      </blockquote></div>
+  </>)
+} 
 
 
 const Comments = () => {
