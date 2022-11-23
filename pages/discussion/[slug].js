@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { PostCard } from '../../components';
+import { DiscussionComments, PostCard } from '../../components';
 import { Row, TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
@@ -24,6 +24,7 @@ return (
               <PostCard key={index} post={post.node} title={post.node.title} />
             ))} 
         </Row>
+        <DiscussionComments />
     </Cntr>
   )
 }

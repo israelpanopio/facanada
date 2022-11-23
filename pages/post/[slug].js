@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Body, Col, SidebarNav } from '../../components/sharedstyles';
 import { PostDetail, Widget } from '../../components';
 
-const PostDetails = ({ post, slug }) => {
+const PostDetails = ({ post }) => {
   const router = useRouter();
 
 if (router.isFallback) {

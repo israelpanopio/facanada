@@ -8,10 +8,6 @@ import Script from "next/script";
 export default function About() {
   return (
     <Body>
-    <Script
-      id="fb-root" 
-      async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"
-    />
       <Col>
         <CategoryTitle>About Us</CategoryTitle>
         <TogglePageLeft><Link  href="/"><FaRegHandPointLeft /> Back to Home</Link></TogglePageLeft>
@@ -70,7 +66,10 @@ const AboutUs = () => {
 
 const Comments = () => {
   return(<>
-<div className="fb-comments" data-href="https://facanada.vercel.app/about" data-width="800" data-numposts="5"></div>
-  
+    <Script
+      id="fb-root" 
+      async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"
+    />
+    <div className="fb-comments" data-href="http://localhost:3000/about" data-width="800" data-numposts="5"></div>
   </>)
 } 

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
 import { FaCalendarWeek } from 'react-icons/fa';
+import { PostComments } from './CommentSection';
 
 const PostDetail = ({ post }) => {
 
@@ -13,6 +14,7 @@ const PostDetail = ({ post }) => {
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
       <RichText content={post.content.raw.children} />
+      <PostComments slug={post.slug} />
     </div>
   )
 }

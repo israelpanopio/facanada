@@ -7,3 +7,4 @@ export { default as PostDetail } from './PostDetail';
 export { default as Widget } from './Widget';
 export { default as WidgetCard } from './WidgetCard';
 export { default as FeaturedPosts } from './FeaturedPosts';
+export { PostComments, DiscussionComments } from './CommentSection';
