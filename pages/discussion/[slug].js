@@ -24,7 +24,7 @@ return (
               <PostCard key={index} post={post.node} title={post.node.title} />
             ))} 
         </Row>
-        <DiscussionComments />
+        <DiscussionComments slug={category.slug} />
     </Cntr>
   )
 }
