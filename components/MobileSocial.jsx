@@ -14,7 +14,7 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
           nonce="fERdatdU"
         />
         <SocialDiv>
-          <div className="fb-like" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+          <div className="fb-like" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="50" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
           <FButton onClick={refreshPage}>See Comments</FButton>
           <FButton onClick={toggleMobileComments}>Close Comments</FButton>
         </SocialDiv>
@@ -42,10 +42,10 @@ const FButton = styled.button`
   box-sizing: border-box;
   color: #fff;
   font-size: 12px;
-  margin: 10px 0 0 1vw;
+  margin: 10px 0 0 2vw;
   padding: 5px 5px;
   border-radius: 4px;
-  width: 23vw;
+  width: 21vw;
   z-index: 12;
   font-weight: bold;
 
