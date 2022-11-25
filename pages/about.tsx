@@ -6,13 +6,17 @@ import { Widget } from '../components';
 import Script from "next/script";
 
 export default function About() {
+  function refreshPage() {
+    window.location.reload();
+ }
   return (
     <Body>
       <Col>
         <CategoryTitle>About Us</CategoryTitle>
         <TogglePageLeft><Link  href="/"><FaRegHandPointLeft /> Back to Home</Link></TogglePageLeft>
         <AboutUs />
-        <Comments />
+          <div className="fb-comments" data-href="https://www.ph2canada.com/about" data-width="800" data-numposts="5"></div>
+       <p>Can't see the comment's section? <button onClick={refreshPage}>Click me to reload!</button></p>
       </Col>
       <Col>
         <SidebarNav>
@@ -22,6 +26,13 @@ export default function About() {
     </Body>
   )
 }
+
+
+function Comments() {
+  
+  return(<>
+  </>)
+} 
 
 const AboutUs = () => {
   return (<>
@@ -63,13 +74,3 @@ const AboutUs = () => {
     <p></p>
 </>)}
 
-
-const Comments = () => {
-  return(<>
-    <Script
-      id="fb-root" 
-      async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6"
-    />
-    <div className="fb-comments" data-href="https://facanada.vercel.app/about" data-width="800" data-numposts="5"></div>
-  </>)
-} 

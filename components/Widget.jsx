@@ -2,11 +2,19 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { Col } from './sharedstyles';
-import { WidgetCard, InFeedAds } from '../components';
+import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
+  const [openComments, setOpenComments] = useState(false);
+
+  const toggleComments = () => {
+    setOpenComments(!openComments)
+  }
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   useEffect(() => {
     if (slug) {
@@ -20,35 +28,66 @@ const Widget = ({ categories, slug }) => {
     }
   }, [slug]);
 
-  return (
-    <Col>
-      <HideAds><InFeedAds /></HideAds>
+
+  return (<Div>
+    <HideAds><DesktopAds /></HideAds>
       <SidebarNav>
-        <h4>{slug ? 'Related Posts' : 'Recent Posts'}</h4>
-        {relatedPosts.map((post, index ) => (
+        <Comments openComments={openComments}>
+          <div id="fb-root"></div>
+          <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100%" data-numposts="1"></div>
+          <p>Can't see the comments? <button onClick={refreshPage}>Click me to reload!</button></p>
+        </Comments>
+        <RelatedPosts openComments={openComments}>
+          <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
+          <Items slug={slug}>
+            {relatedPosts.map((post, index ) => (
               <WidgetCard key={index} post={post} title={post.title} />
             ))}
-        <p></p>
-        <InFeedAds />
+            <InFeedAds />
+          </Items>
+        </RelatedPosts>
       </SidebarNav>
-    </Col>
+    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} /></Div>
   )
 }
 
 export default Widget
 
-const WidgetItem = styled.div`
-display: grid;
-grid-template-columns: 2fr 3fr;
-margin: 7px auto;
-width: 95%;
-cursor: pointer;
+const Div = styled.div`
+  margin:0;
+  padding:0;
+`
 
-&:hover{
-background-color: red;
+
+const SidebarNav = styled.nav`
+    margin-top: 0;
+    z-index: 5;
+    height:  ${({ slug }) => (slug ? '70vh' : '76vh')};
+    overflow: hidden;
+`
+
+const Items = styled.div`
+    height:  ${({ slug }) => (slug ? '66vh' : '72vh')};
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @media screen and (max-width: 900px) {
+      height:100%;
+      overflow: visible;
+
 }
 `
 
+const RelatedPosts = styled.div`
+  display:  ${({ openComments }) => (openComments ? 'none' : 'block')};
+`
+const Comments = styled.div`
+  bottom: 0;
+  height: 70vh;
+  overflow-y: scroll;
+  opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
+  display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
+`
 
 const WidgetImage = styled(Link)`
 padding-top: 130%;
@@ -76,15 +115,9 @@ transition: 0.2s ease-in-out;
 background-color: white;
 }
 `
-const SidebarNav = styled.nav`
-    position: sticky;
-    top: 80px;
-    z-index: 5;
-    margin-top: 3rem;
-`
 
 const HideAds = styled.div`
-@media screen and (max-width: 900px) {
+    @media screen and (max-width: 900px) {
     display: none;
 }
 `

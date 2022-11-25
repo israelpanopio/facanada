@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Head from 'next/head';
+import React, { useState, useEffect, memo  } from 'react'
 import { NavBar, Togglebar } from '../components';
 import { Container } from './sharedstyles';
 import Script from "next/script";
@@ -10,6 +9,17 @@ const Layout = ({ children }) => {
   const toggle = () => {
       setIsOpen(!isOpen)
   }
+  
+  useEffect(() => {
+    if(window.FB){
+      window.FB.XFBML.parse();
+      }
+    //  console.log(window.FB)
+     const facebookScript = document.createElement("script");
+     facebookScript.async = true;
+     facebookScript.src = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=${process.env.FACEBOOK_APP_ID}&autoLogAppEvents=1`;
+     document.body.appendChild(facebookScript);
+  },[]);
 
   return (
     <>
@@ -19,14 +29,13 @@ const Layout = ({ children }) => {
         strategy="beforeInteractive"
         async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      <Head>
-        <title>Filipinos Aspiring to Canada</title>
-        <meta name="Filipinos Aspiring to Canada" content="by Israel Panopio" />
-        <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>
-        <meta property="fb:app_id" content="366180864923538" />
-        <meta property="fb:admins" content="empoyan"/>
-      </Head>
+      {/* <Script
+        id="fb-root" 
+        async defer crossorigin="anonymous" 
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=366180864923538&autoLogAppEvents=1"
+        nonce="bEwmLXkc"
+        lazy="false"
+      /> */}
       <Togglebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
       <Container>

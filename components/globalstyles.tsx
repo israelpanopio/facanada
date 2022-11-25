@@ -18,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-size: 20px;
     line-height: 1.65em;
+  }    
+  
+  button {
+    font-size: 20px;
+    line-height: 1.65em;
   }  
   
   li {

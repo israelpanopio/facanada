@@ -4,7 +4,7 @@ import { Body, Col, SidebarNav } from '../components/sharedstyles'
 import { PostCard, Welcome, Widget } from '../components';
 import { getFeaturedPosts } from '../services';
 
-export default function Home({ posts }) {
+export default function Home({ posts, isSlug }) {
   // const [welcome, setWelcome] = useState(true);
 
   // const toggleWelcome = () => {
@@ -22,7 +22,7 @@ export default function Home({ posts }) {
       </Col>
       <Col>
         <SidebarNav>
-          <Widget slug={""} categories={[]} />
+          <Widget slug={""} categories={[]} isSlug={isSlug} />
         </SidebarNav>
       </Col>
     </Body>

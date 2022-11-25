@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   padding: 0 0.5rem;
   display: flex;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto auto auto auto;
 
 @media  screen and (max-width: 1100px) {
@@ -35,7 +35,7 @@ export const Description = styled.p`
 // Body------------------------------------
 export const Body = styled.div`
 display: grid;
-grid-template-columns: 3fr 1fr;
+grid-template-columns: 5fr 2fr;
 width: 100%;
 
 
@@ -46,6 +46,8 @@ grid-template-columns: 1fr;
 export const Col = styled.div`
 max-width: 99%;
 display: inline;
+margin-left:0;
+padding-left:0;
 `
 
 export const AuthorDiv = styled.div`
@@ -91,6 +93,5 @@ export const SidebarNav = styled.nav`
     position: sticky;
     top: 80px;
     z-index: 5;
-    margin-top: 3rem;
 `
 

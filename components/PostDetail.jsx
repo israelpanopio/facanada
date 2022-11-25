@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
 import { FaCalendarWeek } from 'react-icons/fa';
-import { PostComments } from './CommentSection';
 import { GoogleAds, InFeedAds } from '../components';
 
 const PostDetail = ({ post }) => {
@@ -17,7 +16,6 @@ const PostDetail = ({ post }) => {
       <h1>{post.title}</h1>
       <RichText content={post.content.raw.children} />
         <GoogleAds />
-      <PostComments slug={post.slug} />
     </div>
   )
 }
@@ -29,6 +27,8 @@ display: block;
 margin: 0.5rem auto ;
 display: center;
 max-width: 95%;
+margin-left:0;
+padding-left:0;
 
     @media (orientation: landscape) {
         max-height: 50vh;

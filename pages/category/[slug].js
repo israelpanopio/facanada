@@ -14,7 +14,7 @@ if (router.isFallback) {
   return (
     <h1>Loading...</h1>
   )
-} 
+} else
 
 return (
     <Cntr>

@@ -25,7 +25,7 @@ return (
             ))} 
         </Row>
         <GoogleAds />
-        <DiscussionComments slug={category.slug} />
+        {/* <DiscussionComments slug={category.slug} /> */}
     </Cntr>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const InFeedAds = () => {   
+const DesktopAds = () => {   
     useEffect(() => {
       var ads = document.getElementsByClassName("adsbygoogle").length;
       for (var i = 0; i < ads; i++) {
@@ -12,7 +12,7 @@ const InFeedAds = () => {
 
   return (
     <ins className="adsbygoogle"
-        style={{display:"block"}}
+        style={{display:"block", height:"15vh"}}
         data-ad-format="fluid"
         data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-4841621324421656"
@@ -21,5 +21,4 @@ const InFeedAds = () => {
     )
 }
 
-export default InFeedAds
-
+export default DesktopAds
