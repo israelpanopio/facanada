@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Script from "next/script";
 
 const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
-  console.log(openMobileComments);
       return (<>
         <Script
           id="fb-root" 

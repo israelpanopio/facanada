@@ -22,7 +22,7 @@ export default function Home({ posts, isSlug }) {
       </Col>
       <Col>
         <SidebarNav>
-          <Widget slug={""} categories={[]} isSlug={isSlug} />
+          <Widget slug={""} categories={[]} />
         </SidebarNav>
       </Col>
     </Body>
