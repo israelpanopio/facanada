@@ -22,10 +22,14 @@ export default MobileSocial
 
 const SocialDiv = styled.div`
   position: sticky;
-  bottom: 1%;
+  bottom: 0;
   margin-bottom: 0;
+  padding-bottom: 20px;
   z-index: 10;
 
+  @media screen and (max-width: 900px) {
+  background: white;
+}
 `
 
 const FButton = styled.button`
@@ -37,7 +41,7 @@ const FButton = styled.button`
   margin-top: 10px;
   margin-bottom: 0;
   padding: 5px 10px;
-  border-radius: 8px;
+  border-radius: 4px;
   width: 50vw;
   z-index: 12;
   font-weight: bold;

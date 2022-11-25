@@ -1,9 +1,10 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState }  from 'react'
 import { getPosts, getPostDetails } from '../../services';
 import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import { Body, Col, SidebarNav } from '../../components/sharedstyles';
 import { MobileSocial, PostDetail, Widget } from '../../components';
+import { animateScroll as scroll } from 'react-scroll'
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -11,6 +12,7 @@ const PostDetails = ({ post }) => {
 
   const toggleMobileComments = () => {
     setOpenMobileComments(!openMobileComments)
+    scroll.scrollToTop();
   }
 
   function refreshPage() {
