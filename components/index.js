@@ -11,4 +11,5 @@ export { default as GoogleAds } from './GoogleAds';
 export { default as InFeedAds } from './InFeedAds';
 export { default as DesktopAds } from './DesktopAds';
 export { default as DesktopSocial } from './DesktopSocial';
+export { default as DesktopComments } from './DesktopComments';
 export { default as MobileSocial } from './MobileSocial';

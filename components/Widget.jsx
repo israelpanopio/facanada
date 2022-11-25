@@ -2,14 +2,24 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds } from '../components';
+import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
+  const [comm, setComm] = useState('');
 
   const toggleComments = () => {
-    window.location.reload(false);
+    // window.location.reload(false);
+    // document.querySelector('#comments').load(location.href + " #comments");
+    // if (document.querySelector("#fb-root") == [<div id="fb-root"></div>]) {
+    //     console.log("yes");
+    // } else {
+    //   console.log(document.querySelector("#fb-root"));
+    // // }
+    // setComm(document.querySelector("#comments"));
+    // console.log(comm.innerHTML);
+    // router.reload(document.querySelector("#comments"))
   }
 
   const closeComment = () => {
@@ -18,7 +28,7 @@ const Widget = ({ categories, slug }) => {
   function refreshPage() {
     window.location.reload(false);
   }
-
+  
   useEffect(() => {
     if (slug) {
       getSimilarPosts(categories, slug).then((result) => {
@@ -33,14 +43,10 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
+
     <HideAds><DesktopAds /></HideAds>
       <SidebarNav>
-        <Comments id="comments" openComments={openComments}>
-        <button onClick={refreshPage}>Click me to update comments</button>
-          <div id="fb-root"></div>
-          <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100%" data-numposts="2"></div>
-          {/* <p>Can't see the comments? <button onClick={refreshPage}>Click me to reload!</button></p> */}
-        </Comments>
+      {slug ? <DesktopComments slug={slug} openComments={openComments} refreshPage={refreshPage} /> : ''}
         <RelatedPosts openComments={openComments}>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
           <Items slug={slug}>
@@ -61,7 +67,11 @@ const Div = styled.div`
   margin:0;
   padding:0;
 `
-
+const Comments = styled.div`
+  bottom: 0;
+  opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
+  display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
+`
 
 const SidebarNav = styled.nav`
     margin-top: 0;
@@ -78,11 +88,6 @@ const Items = styled.div`
 
 const RelatedPosts = styled.div`
   ${'' /* display:  ${({ openComments }) => (openComments ? 'none' : 'block')}; */}
-`
-const Comments = styled.div`
-  bottom: 0;
-  opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
-  display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
 `
 
 const WidgetImage = styled(Link)`

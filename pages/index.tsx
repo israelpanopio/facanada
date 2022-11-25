@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FaCanadianMapleLeaf } from 'react-icons/fa';
 import { Body, Col, SidebarNav } from '../components/sharedstyles'
 import { PostCard, Welcome, Widget } from '../components';
