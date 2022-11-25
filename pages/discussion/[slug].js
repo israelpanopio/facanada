@@ -9,6 +9,9 @@ import { Cntr, CategoryTitle } from '../category/[slug]';
 
 const CategoryDetails = ({ posts, category }) => {
   const router = useRouter();
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
 if (router.isFallback) {
   return (
@@ -25,7 +28,10 @@ return (
             ))} 
         </Row>
         <GoogleAds />
-        {/* <DiscussionComments slug={category.slug} /> */}
+          <div id="fb-root"></div>
+          <p>Can't find what you're looking for? Let's discuss in the comments section below.</p>
+          <div className="fb-comments" data-href={`https://www.ph2canada.com/discussion/${category.slug}`} data-width="100%" data-numposts="1"></div>
+          <p>Can't see the comments? <button onClick={refreshPage}>Click me to reload!</button> Comment section should appear on top</p>
     </Cntr>
   )
 }
