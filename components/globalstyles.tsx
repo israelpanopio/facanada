@@ -20,10 +20,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.65em;
   }    
   
-  button {
-    font-size: 20px;
-    line-height: 1.65em;
-  }  
+
   
   li {
     font-size: 20px;

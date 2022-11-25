@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const DesktopSocial = ({ slug, toggleComments, openComments }) => {
+const DesktopSocial = ({ slug, toggleComments, openComments, closeComment }) => {
    if (slug) {
       return (
         <SocialDiv>
-          <FButton onClick={toggleComments}>{openComments ? 'Close Comments' : 'See Comments'}</FButton>
+          <FButton onClick={toggleComments}>See Comments</FButton>
+          <FButton onClick={closeComment}>Close Comments</FButton>
         </SocialDiv>
     )
    } else {
@@ -32,10 +33,10 @@ const FButton = styled.button`
   box-sizing: border-box;
   color: #fff;
   font-size: 14px;
-  margin-top: 24px;
+  margin: 24px 2px 0 2px;
   padding: 12px;
   border-radius: 8px;
-  width: 340px;
+  width: 160px;
   z-index: 12;
   font-weight: bold;
 `

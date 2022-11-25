@@ -9,6 +9,7 @@ import { Cntr, CategoryTitle } from '../category/[slug]';
 
 const CategoryDetails = ({ posts, category }) => {
   const router = useRouter();
+  
   function refreshPage() {
     window.location.reload(false);
   }

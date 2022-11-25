@@ -6,12 +6,15 @@ import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds } from '../components'
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
-  const [openComments, setOpenComments] = useState(false);
+  const [openComments, setOpenComments] = useState(true);
 
   const toggleComments = () => {
-    setOpenComments(!openComments)
+    window.location.reload(false);
   }
 
+  const closeComment = () => {
+    setOpenComments(false);
+  }
   function refreshPage() {
     window.location.reload(false);
   }
@@ -32,10 +35,11 @@ const Widget = ({ categories, slug }) => {
   return (<Div>
     <HideAds><DesktopAds /></HideAds>
       <SidebarNav>
-        <Comments openComments={openComments}>
+        <Comments id="comments" openComments={openComments}>
+        <button onClick={refreshPage}>Click me to update comments</button>
           <div id="fb-root"></div>
-          <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100%" data-numposts="1"></div>
-          <p>Can't see the comments? <button onClick={refreshPage}>Click me to reload!</button></p>
+          <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100%" data-numposts="2"></div>
+          {/* <p>Can't see the comments? <button onClick={refreshPage}>Click me to reload!</button></p> */}
         </Comments>
         <RelatedPosts openComments={openComments}>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
@@ -47,7 +51,7 @@ const Widget = ({ categories, slug }) => {
           </Items>
         </RelatedPosts>
       </SidebarNav>
-    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} /></Div>
+    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} closeComment={closeComment}/></Div>
   )
 }
 
@@ -63,28 +67,20 @@ const SidebarNav = styled.nav`
     margin-top: 0;
     z-index: 5;
     height:  ${({ slug }) => (slug ? '70vh' : '76vh')};
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 `
 
 const Items = styled.div`
-    height:  ${({ slug }) => (slug ? '66vh' : '72vh')};
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    @media screen and (max-width: 900px) {
-      height:100%;
       overflow: visible;
-
 }
 `
 
 const RelatedPosts = styled.div`
-  display:  ${({ openComments }) => (openComments ? 'none' : 'block')};
+  ${'' /* display:  ${({ openComments }) => (openComments ? 'none' : 'block')}; */}
 `
 const Comments = styled.div`
   bottom: 0;
-  height: 70vh;
-  overflow-y: scroll;
   opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
   display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
 `

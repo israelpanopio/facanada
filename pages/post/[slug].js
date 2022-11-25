@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import { getPosts, getPostDetails } from '../../services';
 import { useRouter } from 'next/router';
 import styled from 'styled-components'
@@ -8,11 +8,10 @@ import { animateScroll as scroll } from 'react-scroll'
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
-  const [openMobileComments, setOpenMobileComments] = useState(false);
+  const [openMobileComments, setOpenMobileComments] = useState(true);
 
   const toggleMobileComments = () => {
-    setOpenMobileComments(!openMobileComments)
-    scroll.scrollToTop();
+    setOpenMobileComments(false)
   }
 
   function refreshPage() {
@@ -80,4 +79,7 @@ const Comments = styled.div`
   height: auto;
   opacity: ${({ openMobileComments }) => (openMobileComments ? '100%' : '0')};
   display:  ${({ openMobileComments }) => (openMobileComments ? 'block' : 'none')};
+  @media screen and (min-width: 900px) {
+  display: none;
+}
 `
