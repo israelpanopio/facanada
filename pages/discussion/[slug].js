@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { DiscussionComments, GoogleAds, PostCard } from '../../components';
+import React from 'react'
+import {  GoogleAds, PostCard } from '../../components';
 import { Row, TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';

@@ -1,7 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
 import moment from 'moment';
-import Link from 'next/link';
 import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
 import { Author, AuthorDiv } from './sharedstyles';
@@ -47,7 +45,7 @@ export const PostCardItem = styled.div`
   padding: 10px;
 }
 `
-const ImagePreview = styled(Link)`
+const ImagePreview = styled.a`
   padding-top: 45%;
   background-size: cover;
   background-position: center;

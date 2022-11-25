@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const DesktopComments = ({ slug, openComments, refreshPage }) => {  
+const DesktopComments = ({ slug, openComments }) => {  
   return (
     <Comments id="comments" openComments={openComments} >
-    <button onClick={refreshPage}>Click me to update comments</button>
       <div id="fb-root"></div>
       <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100%" data-numposts="2"></div>
     </Comments>

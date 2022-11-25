@@ -3,30 +3,14 @@ import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
 import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
+import $ from "jquery";
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
-  const [comm, setComm] = useState('');
 
   const toggleComments = () => {
-    // window.location.reload(false);
-    // document.querySelector('#comments').load(location.href + " #comments");
-    // if (document.querySelector("#fb-root") == [<div id="fb-root"></div>]) {
-    //     console.log("yes");
-    // } else {
-    //   console.log(document.querySelector("#fb-root"));
-    // // }
-    // setComm(document.querySelector("#comments"));
-    // console.log(comm.innerHTML);
-    // router.reload(document.querySelector("#comments"))
-  }
-
-  const closeComment = () => {
-    setOpenComments(false);
-  }
-  function refreshPage() {
-    window.location.reload(false);
+    setOpenComments(!openComments);
   }
   
   useEffect(() => {
@@ -46,7 +30,7 @@ const Widget = ({ categories, slug }) => {
 
     <HideAds><DesktopAds /></HideAds>
       <SidebarNav>
-      {slug ? <DesktopComments slug={slug} openComments={openComments} refreshPage={refreshPage} /> : ''}
+      {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
           <Items slug={slug}>
@@ -57,7 +41,7 @@ const Widget = ({ categories, slug }) => {
           </Items>
         </RelatedPosts>
       </SidebarNav>
-    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} closeComment={closeComment}/></Div>
+    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} /></Div>
   )
 }
 
@@ -67,18 +51,17 @@ const Div = styled.div`
   margin:0;
   padding:0;
 `
-const Comments = styled.div`
-  bottom: 0;
-  opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
-  display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
-`
 
 const SidebarNav = styled.nav`
-    margin-top: 0;
-    z-index: 5;
-    height:  ${({ slug }) => (slug ? '70vh' : '76vh')};
-    overflow-y: scroll;
-    overflow-x: hidden;
+  margin-top: 0;
+  z-index: 5;
+  height:  ${({ slug }) => (slug ? '70vh' : '76vh')};
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 900px) {
+  overflow: visible;
+  }
 `
 
 const Items = styled.div`

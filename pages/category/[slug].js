@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { GoogleAds, PostCard } from '../../components';
 import { Row, TogglePageRight } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getFeaturedCategoryPost } from '../../services';
 import styled from 'styled-components';
 import { FaRegHandPointRight } from 'react-icons/fa';
-import Link from 'next/link';
 
 const CategoryDetails = ({ posts, category }) => {
   const router = useRouter();
@@ -19,7 +18,7 @@ if (router.isFallback) {
 return (
     <Cntr>
       <CategoryTitle>{category.name}</CategoryTitle>
-      <TogglePageRight><Link  href={`/discussion/${category.slug}`}>Proceed to Discussions <FaRegHandPointRight /></Link></TogglePageRight>
+      <TogglePageRight><a href={`/discussion/${category.slug}`}>Proceed to Discussions <FaRegHandPointRight /></a></TogglePageRight>
       <Row>{posts.map((post, index ) => (
             <PostCard key={index} post={post.node} title={post.node.title} />
           ))} 

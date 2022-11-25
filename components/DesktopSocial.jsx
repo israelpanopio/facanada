@@ -5,8 +5,7 @@ const DesktopSocial = ({ slug, toggleComments, openComments, closeComment }) => 
    if (slug) {
       return (
         <SocialDiv>
-          <FButton onClick={toggleComments}>See Comments</FButton>
-          <FButton onClick={closeComment}>Close Comments</FButton>
+          <FButton onClick={toggleComments}>{openComments ? 'Close Comments' : 'See Comments'}</FButton>
         </SocialDiv>
     )
    } else {
@@ -33,10 +32,10 @@ const FButton = styled.button`
   box-sizing: border-box;
   color: #fff;
   font-size: 14px;
-  margin: 24px 2px 0 2px;
+  margin-top: 24px;
   padding: 12px;
   border-radius: 8px;
-  width: 160px;
+  width: 340px;
   z-index: 12;
   font-weight: bold;
 `

@@ -1,11 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Script from "next/script";
 
 const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {  
-  function refreshPage() {
-    location.reload(true);
-  }
       return (<>
         <Script
           id="fb-root" 
@@ -14,9 +11,8 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
           nonce="fERdatdU"
         />
         <SocialDiv>
-          <div className="fb-like" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="50" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-          <FButton onClick={refreshPage}>See Comments</FButton>
-          <FButton onClick={toggleMobileComments}>Close Comments</FButton>
+          <div className="fb-like" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="100" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+          <FButton onClick={toggleMobileComments}>{openMobileComments ? 'Close Comments' : 'See Comments'}</FButton>
         </SocialDiv>
       </>
     )
@@ -42,10 +38,11 @@ const FButton = styled.button`
   box-sizing: border-box;
   color: #fff;
   font-size: 12px;
-  margin: 10px 0 0 2vw;
-  padding: 5px 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 5px 10px;
   border-radius: 4px;
-  width: 21vw;
+  width: 50vw;
   z-index: 12;
   font-weight: bold;
 

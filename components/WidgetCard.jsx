@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
 import { Author } from './sharedstyles';
 import { PostCardItem } from './PostCard';
-import Link from 'next/link';
 
 const WidgetCard = ({ post }) => {
   return (<PostCardItem>
@@ -31,7 +30,7 @@ const Title = styled.div`
   border-radius: 10px;
 `
 
-const ImagePreview = styled(Link)`
+const ImagePreview = styled.a`
   padding-top: 20%;
   background-size: cover;
   background-position: center;
