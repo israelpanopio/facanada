@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
+import { WidgetCard, GoogleAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
 import $ from "jquery";
 
 const Widget = ({ categories, slug }) => {
@@ -37,7 +37,7 @@ const Widget = ({ categories, slug }) => {
             {relatedPosts.map((post, index ) => (
               <WidgetCard key={index} post={post} title={post.title} />
             ))}
-            <InFeedAds />
+            <GoogleAds />
           </Items>
         </RelatedPosts>
       </SidebarNav>

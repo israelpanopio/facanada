@@ -15,6 +15,24 @@ const PostDetail = ({ post }) => {
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
       <RichText content={post.content.raw.children} />
+        {post.content2 ? 
+          <>
+          <InFeedAds />  
+          <RichText content={post.content2.raw.children} />
+          </> 
+        : ''}
+        {post.content3 ? 
+          <>
+          <InFeedAds />  
+          <RichText content={post.content3.raw.children} />
+          </> 
+        : ''}
+        {post.content4 ? 
+          <>
+          <InFeedAds />  
+          <RichText content={post.content4.raw.children} />
+          </> 
+        : ''}
         <GoogleAds />
     </div>
   )

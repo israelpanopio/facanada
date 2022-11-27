@@ -49,7 +49,7 @@ export const Nav = styled.nav`
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 15;
     border-bottom: 3px solid black;
     margin: 0;
     background-color: white;

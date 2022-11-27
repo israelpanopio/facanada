@@ -56,7 +56,7 @@ export const getSimilarPosts = async (categories, slug) => {
             posts(
                 where: {slug_not: $slug, AND: {categories_some: { slug_in: $categories}}}
                 orderBy: publishedAt_DESC
-                first: 4
+                first: 5
             ) {
                 title
                 featuredImage {
@@ -77,7 +77,7 @@ export const getRecentPosts = async () => {
         query GetPostDetails(){
             posts(
                 orderBy: publishedAt_DESC
-                first: 4
+                first: 5
             ) {
                 title
                 featuredImage {
@@ -199,7 +199,18 @@ export const getPostDetails = async (slug) => {
                 content {
                     raw
                     markdown
-                    html
+                }
+                content2 {
+                    raw
+                    markdown
+                }
+                content3 {
+                    raw
+                    markdown
+                }
+                content4 {
+                    raw
+                    markdown
                 }
             }            
         }
