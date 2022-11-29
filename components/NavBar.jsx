@@ -51,7 +51,8 @@ export const Nav = styled.nav`
     top: 0;
     z-index: 15;
     border-bottom: 3px solid black;
-    margin: 0;
+    margin: -20px 0 0 0;
+    padding-top: 10px;
     background-color: white;
 
 @media  screen and (max-width: 1040px) {
@@ -65,7 +66,7 @@ justify-content: space-between;
 height: 50px;
 z-index: 1;
 width: 100%;
-max-width: 1100px;
+max-width: 1200px;
 `
 
 const NavLogo = styled(Link)`
@@ -93,7 +94,8 @@ padding-left: 0.5rem;
 
 const LogoText = styled.p`
 font-size: 18px;
-margin: 0;
+margin: -8px 5px -8px 0;
+padding: 0;
 font-weight: bold;
 color: black;
 `
@@ -105,7 +107,7 @@ display: none;
     font-size: 1.8rem;
     display: block;
     position: absolute;
-    margin: -7px 0 0;
+    margin: 0;
     top: 0;
     right: 0;
     transform: translate(-100%, 25%);

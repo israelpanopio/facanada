@@ -34,7 +34,7 @@ const Title = styled.div`
 
 export const PostCardItem = styled.div`
   display: grid;
-  margin: 7px auto;
+  margin: 7px auto 15px auto;
   width: 95%;
   cursor: pointer;
   border-radius: 10px;

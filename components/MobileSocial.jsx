@@ -42,7 +42,7 @@ const FButton = styled.button`
   margin-bottom: 0;
   padding: 5px 10px;
   border-radius: 4px;
-  width: 50vw;
+  width: 40vw;
   z-index: 12;
   font-weight: bold;
 

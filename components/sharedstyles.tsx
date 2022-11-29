@@ -6,7 +6,7 @@ export const Container = styled.div`
   max-width: 1200px;
   margin: auto auto auto auto;
 
-@media  screen and (max-width: 1100px) {
+@media  screen and (max-width: 1200px) {
     max-width: 95%;
 }
 `
@@ -37,6 +37,9 @@ export const Body = styled.div`
 display: grid;
 grid-template-columns: 5fr 2fr;
 width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
 
 
 @media screen and (max-width: 900px) {

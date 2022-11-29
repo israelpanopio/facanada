@@ -21,7 +21,8 @@ export default class MyDocument extends Document {
                   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>
                   <meta property="fb:app_id" content="366180864923538" />
                   <meta property="fb:admins" content="empoyan"/>
-                </Head><App {...props} />
+                </Head>
+                <App {...props} />
               </>),
         })
 
