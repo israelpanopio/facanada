@@ -12,7 +12,7 @@ const InFeedAds = () => {
 
   return (
     <ins className="adsbygoogle"
-        style={{display:"block", height:"10vh"}}
+        style={{display:"block", height:"12vh"}}
         data-ad-format="fluid"
         data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-4841621324421656"

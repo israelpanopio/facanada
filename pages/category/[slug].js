@@ -52,10 +52,14 @@ export async function getStaticPaths() {
 }
 
 export const Cntr = styled.div`
-max-width: 1100px;
+max-width: 1200px;
 min-height: 80vh;
-margin: 50px auto auto auto;
-background: rgba(255,255,255, 0.5);
+margin: auto;
+justify-content: center;
+
+@media screen and (max-width: 1200px) {
+max-width: 90vw;
+}
 `
 
 export const CategoryTitle = styled.h1`

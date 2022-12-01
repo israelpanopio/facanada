@@ -9,7 +9,7 @@ import { GoogleAds, InFeedAds } from '../components';
 const PostDetail = ({ post }) => {
 
   return (
-    <div>
+    <Post>
     <InFeedAds />        
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
@@ -34,11 +34,19 @@ const PostDetail = ({ post }) => {
           </> 
         : ''}
         <GoogleAds />
-    </div>
+    </Post>
   )
 }
 
 export default PostDetail
+
+const Post = styled.div`
+ 
+  @media screen and (max-width: 900px) {
+    max-width: 96vw;
+    margin: auto auto auto 2vw;
+}
+`
 
 const FeaturedImage = styled.img`
 display: block;

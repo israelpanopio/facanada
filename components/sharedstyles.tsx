@@ -40,6 +40,7 @@ width: 100%;
 height: 100%;
 padding: 0;
 margin: 0;
+justify-content: center;
 
 
 @media screen and (max-width: 900px) {
@@ -49,8 +50,7 @@ grid-template-columns: 1fr;
 export const Col = styled.div`
 max-width: 99%;
 display: inline;
-margin-left:0;
-padding-left:0;
+justify-content: center;
 `
 
 export const AuthorDiv = styled.div`

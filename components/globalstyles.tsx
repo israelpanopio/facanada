@@ -31,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
     max-width: 95%;
     height: auto;
     border-radius: 8px; 
+    display: block;
+    margin: auto;
   }
 
   h2{
