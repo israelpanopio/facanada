@@ -116,6 +116,7 @@ export const getFeaturedCategoryPost= async (slug) => {
             postsConnection(
                 where: {categories_some: {slug: $slug}, featuredPost: true}
                 orderBy: createdAt_ASC
+                first: 12
             ) {
                 edges {
                     cursor
