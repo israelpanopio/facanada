@@ -1,6 +1,6 @@
 import React from 'react'
-import {  GoogleAds, PostCard } from '../../components';
-import { Row, TogglePageLeft } from '../../components/sharedstyles';
+import {  DiscussionCard, GoogleAds,  } from '../../components';
+import { TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
 import { FaRegHandPointLeft } from 'react-icons/fa';
@@ -20,10 +20,9 @@ return (
     <Cntr>
         <CategoryTitle>{category.name}</CategoryTitle>
       <TogglePageLeft><Link  href={`/category/${category.slug}`}><FaRegHandPointLeft /> Back to Featured Posts</Link></TogglePageLeft>
-        <Row>{posts.map((post, index ) => (
-              <PostCard key={index} post={post.node} title={post.node.title} />
+        {posts.map((post, index ) => (
+              <DiscussionCard key={index} post={post.node} title={post.node.title} />
             ))} 
-        </Row>
         <GoogleAds />
           <div id="fb-root"></div>
           <p>Can't find what you're looking for? Let's discuss in the comments section below.</p>

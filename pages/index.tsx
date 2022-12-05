@@ -14,8 +14,8 @@ export default function Home({ posts, isSlug }) {
     <Body>
     {/* <Welcome welcome={welcome} toggleWelcome={toggleWelcome} /> */}
       <Col>
-        <h1>Welcome Aspirants!!! <FaCanadianMapleLeaf color={"red"} /></h1>
-        <h3>Hope to see you in Canada!</h3>
+        <h2 style={{margin:"20px 0 0 10px"}}>Welcome Aspirants! <FaCanadianMapleLeaf color={"red"} /></h2>
+        <h3 style={{margin:"0 0 20px 10px"}}>Hope to see you in Canada!</h3>
         <img style={{display:"none"}} src="/logo.png" />
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />

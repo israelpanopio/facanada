@@ -2,41 +2,66 @@ import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
-import { Author, AuthorDiv } from './sharedstyles';
+import { AuthorDiv } from './sharedstyles';
 
-const PostCard = ({ post }) => {
+const DiscussionCard = ({ post }) => {
   return (<PostCardItem>
     <ImagePreview
       href={`/post/${post.slug}`}
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
-    </ImagePreview>
+    </ImagePreview><div>
     <Title>{post.title}</Title>
-    <Excerpt> {(post.content.markdown).slice(0, 200)}...</Excerpt>
-    <MobileExcerpt>{(post.content.markdown).slice(0, 100)}...</MobileExcerpt>
-    
+    <Excerpt> {(post.content.markdown).slice(0, 150)}...</Excerpt></div>
+    {/* <MobileExcerpt>{(post.content.markdown).slice(0, 160)}...</MobileExcerpt> */}
   </PostCardItem>)
 }
 
-export default PostCard
+export default DiscussionCard
 
-const Title = styled.h2`
-  @media screen and (max-width: 900px) {
-    font-size: 22px;
+const Title = styled.h3`
+  line-height: 1.3rem;
+  margin: 0 0 0 10px;
+ 
+  @media screen and (min-width: 900px) {
+    font-size: 1.5rem;
+  line-height: 1.65rem;
+}
+`
+
+export const Author = styled.p`
+background-color: white;
+opacity: 80%;
+font-size: 13px;
+margin: auto; 
+padding: 2px 6px 0 6px;
+float:right;
+  border-radius: 10px 0 0 0 ;
+
+@media screen and (max-width: 900px) {
+  font-size: 11px;
+
 }
 `
 
 export const PostCardItem = styled.div`
   display: grid;
+  grid-template-columns: 200px 1fr;
   margin: 7px auto 15px auto;
   width: 95%;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   padding-bottom: 10px;
+  width: 1200px;
 
   &:hover{
   background-color: #ffc4bc;
   padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  grid-template-columns: 120px 1fr;
+  width: auto;
 }
 `
 const ImagePreview = styled.a`
@@ -49,7 +74,6 @@ const ImagePreview = styled.a`
 const Excerpt = styled.p`
   max-width:95%;
   margin: 0 auto;
-  line-height: 1.5rem;
 
   @media screen and (max-width: 900px) {
     display:none;
@@ -59,8 +83,6 @@ const Excerpt = styled.p`
 const MobileExcerpt = styled.p`
   max-width:95%;
   margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.5rem;
 
   @media screen and (min-width: 900px) {
     display:none;

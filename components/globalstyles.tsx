@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-size: 20px;
     line-height: 1.65em;
+
   }    
   
   ::placeholder {
@@ -40,6 +41,10 @@ const GlobalStyle = createGlobalStyle`
 
   h2{
   margin: 0 0 0 0;
+  }
+
+  h1{
+    line-height: 2.2rem;
   }
 
   * {

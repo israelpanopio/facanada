@@ -62,6 +62,7 @@ export const AuthorDiv = styled.div`
  margin: auto; 
  padding: 2px 6px 0 6px;
  float:right;
+ border-radius: 10px 0 0 0 ;
  `
 
 //Page--------------------

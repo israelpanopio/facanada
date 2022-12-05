@@ -14,3 +14,4 @@ export { default as DesktopSocial } from './DesktopSocial';
 export { default as DesktopComments } from './DesktopComments';
 export { default as MobileSocial } from './MobileSocial';
 export { default as Footer } from './Footer';
+export { default as DiscussionCard } from './DiscussionCard';

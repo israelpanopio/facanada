@@ -152,6 +152,7 @@ export const getLatests= async (slug) => {
             postsConnection(
                 where: {categories_some: {slug: $slug}}
                 orderBy: publishedAt_DESC
+                first: 30
             ) {
                 edges {
                     cursor
