@@ -1,5 +1,5 @@
-import React, { useState, useEffect, memo  } from 'react'
-import { NavBar, Togglebar } from '../components';
+import React, { useState, useEffect  } from 'react'
+import { NavBar, Togglebar, Footer } from '../components';
 import { Container } from './sharedstyles';
 import Script from "next/script";
 
@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
       <Container>
         {children}
       </Container>
+      <Footer />
     </>
   )
 }

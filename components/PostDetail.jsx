@@ -41,7 +41,6 @@ const PostDetail = ({ post }) => {
 export default PostDetail
 
 const Post = styled.div`
- 
   @media screen and (max-width: 900px) {
     max-width: 96vw;
     margin: auto auto auto 2vw;

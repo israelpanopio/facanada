@@ -41,6 +41,7 @@ return (<>
       </Col>
       <MobileSocial slug={post.slug} toggleMobileComments={toggleMobileComments} openMobileComments={openMobileComments} />
     </Body>
+
     </>
   )
 }

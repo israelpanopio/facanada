@@ -19,7 +19,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.65em;
   }    
   
-
+  ::placeholder {
+    font-size: 20px;
+    line-height: 1.65em;
+}
   
   li {
     font-size: 20px;

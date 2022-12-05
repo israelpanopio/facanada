@@ -27,9 +27,8 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-
     <HideAds><DesktopAds /></HideAds>
-      <SidebarNav>
+      <Sidebar>
       {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
@@ -40,7 +39,7 @@ const Widget = ({ categories, slug }) => {
             <GoogleAds />
           </Items>
         </RelatedPosts>
-      </SidebarNav>
+      </Sidebar>
     <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} /></Div>
   )
 }
@@ -52,7 +51,7 @@ const Div = styled.div`
   padding:0;
 `
 
-const SidebarNav = styled.nav`
+const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
   height:  ${({ slug }) => (slug ? '70vh' : '76vh')};

@@ -250,6 +250,7 @@ export const getPosts = async () => {
                     featuredPost
                     content {
                         raw
+                        markdown
                     }
                     }
                 }
@@ -260,4 +261,32 @@ export const getPosts = async () => {
     const result = await request(graphqlAPI, query);
 
     return result.postsConnection.edges
+};
+
+export const getSearchPosts = async (searchKeyword) => {
+    const query = gql`
+      query MyQuery($searchKeyword: String!) {
+        posts(where: {_search: $searchKeyword}) {
+          id
+          title
+          slug
+          content {
+            markdown
+          }
+          content2 {
+            markdown
+          }
+          content3 {
+            markdown
+          }
+          content4 {
+            markdown
+          }
+        }
+      }
+      
+    `
+    const result = await request(graphqlAPI, query, { searchKeyword });
+
+    return result.posts;
 };
