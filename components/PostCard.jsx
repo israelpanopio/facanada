@@ -5,9 +5,9 @@ import { FaCalendarWeek } from 'react-icons/fa';
 import { Author, AuthorDiv } from './sharedstyles';
 
 const PostCard = ({ post }) => {
-  return (<PostCardItem>
+  return (<a href={`/post/${post.slug}`} style={{textDecoration:"none"}}>
+  <PostCardItem>
     <ImagePreview
-      href={`/post/${post.slug}`}
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
     </ImagePreview>
@@ -15,7 +15,7 @@ const PostCard = ({ post }) => {
     <Excerpt> {(post.content.markdown).slice(0, 200)}...</Excerpt>
     <MobileExcerpt>{(post.content.markdown).slice(0, 100)}...</MobileExcerpt>
     
-  </PostCardItem>)
+  </PostCardItem></a>)
 }
 
 export default PostCard

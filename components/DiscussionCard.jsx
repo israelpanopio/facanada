@@ -5,16 +5,16 @@ import { FaCalendarWeek } from 'react-icons/fa';
 import { AuthorDiv } from './sharedstyles';
 
 const DiscussionCard = ({ post }) => {
-  return (<PostCardItem>
+  return (<a href={`/post/${post.slug}`} style={{textDecoration:"none"}}>
+  <PostCardItem>
     <ImagePreview
-      href={`/post/${post.slug}`}
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
     </ImagePreview><div>
     <Title>{post.title}</Title>
     <Excerpt> {(post.content.markdown).slice(0, 150)}...</Excerpt></div>
     {/* <MobileExcerpt>{(post.content.markdown).slice(0, 160)}...</MobileExcerpt> */}
-  </PostCardItem>)
+  </PostCardItem></a>)
 }
 
 export default DiscussionCard
@@ -22,6 +22,7 @@ export default DiscussionCard
 const Title = styled.h3`
   line-height: 1.3rem;
   margin: 0 0 0 10px;
+  text-decoration: none; 
  
   @media screen and (min-width: 900px) {
     font-size: 1.5rem;
@@ -64,7 +65,7 @@ export const PostCardItem = styled.div`
   width: auto;
 }
 `
-const ImagePreview = styled.a`
+const ImagePreview = styled.div`
   padding-top: 45%;
   background-size: cover;
   background-position: center;
@@ -76,15 +77,6 @@ const Excerpt = styled.p`
   margin: 0 auto;
 
   @media screen and (max-width: 900px) {
-    display:none;
-}
-`
-
-const MobileExcerpt = styled.p`
-  max-width:95%;
-  margin: 0 auto;
-
-  @media screen and (min-width: 900px) {
     display:none;
 }
 `
