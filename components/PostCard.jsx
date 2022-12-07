@@ -39,7 +39,7 @@ export const PostCardItem = styled.div`
   padding: 10px;
 }
 `
-const ImagePreview = styled.a`
+const ImagePreview = styled.div`
   padding-top: 45%;
   background-size: cover;
   background-position: center;
