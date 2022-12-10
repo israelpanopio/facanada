@@ -10,9 +10,10 @@ const WidgetCard = ({ post }) => {
     <ImagePreview
       href={`/post/${post.slug}`}
       style={{
-        backgroundImage: `url('${post.featuredImage.url}')`
+        backgroundImage: `url('${post.featuredImage.url}')`,
+        textDecoration:"none"
     }}>
-    <Title><h3>{post.title}</h3></Title>
+    <Title><h5>{post.title}</h5></Title>
     <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></ImagePreview>
   </PostCardItem>)
 }
@@ -28,6 +29,7 @@ const Title = styled.div`
     overflow-wrap: break-word;
   transform: translateY(-50%);
   border-radius: 10px;
+  text-decoration: none; 
 `
 
 const ImagePreview = styled.a`

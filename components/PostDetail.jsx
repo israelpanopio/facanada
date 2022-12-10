@@ -44,6 +44,8 @@ const Post = styled.div`
   @media screen and (max-width: 900px) {
     max-width: 96vw;
     margin: auto auto auto 2vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 `
 

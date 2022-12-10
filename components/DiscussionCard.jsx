@@ -19,7 +19,7 @@ const DiscussionCard = ({ post }) => {
 
 export default DiscussionCard
 
-const Title = styled.h3`
+const Title = styled.h5`
   line-height: 1.3rem;
   margin: 0 0 0 10px;
   text-decoration: none; 

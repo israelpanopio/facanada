@@ -39,12 +39,34 @@ const GlobalStyle = createGlobalStyle`
     margin: auto;
   }
 
-  h2{
-  margin: 0 0 0 0;
-  }
-
   h1{
     line-height: 2.2rem;
+  }
+  
+  h2{
+    font-size: 1.75em;
+    margin: 0 0 0 0;
+    }
+  
+  h3{
+    font-size: 1.6em;
+    line-height: 2.2rem;
+
+  }
+
+  h4{
+    font-size: 1.4em;
+  }
+
+  h5{
+    font-size: 20px;
+  }
+
+  h6{
+    font-size: 20px;
+    margin-bottom: -12px;
+    padding-bottom: 0;
+    line-height: 15px;
   }
 
   * {
