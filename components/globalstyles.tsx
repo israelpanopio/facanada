@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     margin-bottom: -12px;
     padding-bottom: 0;
-    line-height: 15px;
+    line-height: 22px;
   }
 
   * {
