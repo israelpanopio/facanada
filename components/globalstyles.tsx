@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-size: 20px;
+    margin-top: 0;
     line-height: 1.65em;
 
   }    
@@ -41,16 +42,18 @@ const GlobalStyle = createGlobalStyle`
 
   h1{
     line-height: 2.2rem;
+    margin: 3rem auto 8px auto;
+    padding
   }
   
   h2{
     font-size: 1.75em;
-    margin: 0 0 0 0;
+    margin: 3rem 0 0 0;
     }
   
   h3{
     font-size: 1.6em;
-    line-height: 2.2rem;
+    margin: 2rem 0 0 0;
 
   }
 
@@ -64,9 +67,9 @@ const GlobalStyle = createGlobalStyle`
 
   h6{
     font-size: 20px;
-    margin-bottom: -12px;
+    margin-bottom: 5px;
     padding-bottom: 0;
-    line-height: 22px;
+    line-height: 1.65em;
   }
 
   * {

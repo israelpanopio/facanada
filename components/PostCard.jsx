@@ -11,7 +11,7 @@ const PostCard = ({ post }) => {
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
     </ImagePreview>
-    <Title>{post.title}</Title>
+    <Title style={{margin:"0"}}>{post.title}</Title>
     <Excerpt> {(post.content.markdown).slice(0, 200)}...</Excerpt>
     <MobileExcerpt>{(post.content.markdown).slice(0, 100)}...</MobileExcerpt>
     
@@ -23,6 +23,7 @@ export default PostCard
 const Title = styled.h2`
   @media screen and (max-width: 900px) {
     font-size: 22px;
+    margin: 0;
 }
 `
 
@@ -48,7 +49,7 @@ const ImagePreview = styled.div`
 `
 const Excerpt = styled.p`
   max-width:95%;
-  margin: 0 auto;
+  margin: 3px auto auto auto;
   line-height: 1.5rem;
 
   @media screen and (max-width: 900px) {
