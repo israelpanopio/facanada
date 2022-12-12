@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, GoogleAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
+import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
-  const [similarPosts, setSimilarPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
 
   const toggleComments = () => {
@@ -28,15 +27,15 @@ const Widget = ({ categories, slug }) => {
 
   return (<Div>
     {slug ? <HideAds><DesktopAds /></HideAds> : ''}
-      <Sidebar>
+      <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
           <Items slug={slug}>
-            {relatedPosts.map((post, index ) => (
+            {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-            ))}
-            {slug ? <GoogleAds /> : ''}
+              {slug ? <InFeedAds /> : ''}
+              </>))}
           </Items>
         </RelatedPosts>
       </Sidebar>
