@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
+import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments, GoogleAds } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -36,6 +36,7 @@ const Widget = ({ categories, slug }) => {
               <WidgetCard key={index} post={post} title={post.title} />
               {slug ? <InFeedAds /> : ''}
               </>))}
+             {slug ? <GoogleAds /> : ''}
           </Items>
         </RelatedPosts>
       </Sidebar>
