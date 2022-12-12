@@ -15,7 +15,8 @@ export default class MyDocument extends Document {
             sheet.collectStyles(
               <>
                 <Head>
-                  <meta name="Filipinos Aspiring to Canada" content="by Israel Panopio" />
+                  <title>CADreamers</title>
+                  <meta name="Filipinos Aspirants to Canada" content="by Israel Panopio" />
                   <link rel="icon" href="/favicon.ico" />
                   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>
                   <meta property="fb:app_id" content="366180864923538" />
