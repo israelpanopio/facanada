@@ -6,6 +6,7 @@ export { default as PostCard } from './PostCard';
 export { default as PostDetail } from './PostDetail';
 export { default as Widget } from './Widget';
 export { default as WidgetCard } from './WidgetCard';
+export { default as HomeCard } from './HomeCard';
 export { default as FeaturedPosts } from './FeaturedPosts';
 export { default as GoogleAds } from './GoogleAds';
 export { default as InFeedAds } from './InFeedAds';

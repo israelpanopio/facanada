@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
 import { WidgetCard, GoogleAds, DesktopSocial, DesktopAds, DesktopComments } from '../components';
-import $ from "jquery";
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
+  const [similarPosts, setSimilarPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
 
   const toggleComments = () => {
@@ -27,7 +27,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    <HideAds><DesktopAds /></HideAds>
+    {slug ? <HideAds><DesktopAds /></HideAds> : ''}
       <Sidebar>
       {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
@@ -36,7 +36,7 @@ const Widget = ({ categories, slug }) => {
             {relatedPosts.map((post, index ) => (
               <WidgetCard key={index} post={post} title={post.title} />
             ))}
-            <GoogleAds />
+            {slug ? <GoogleAds /> : ''}
           </Items>
         </RelatedPosts>
       </Sidebar>
@@ -54,7 +54,7 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  height:  ${({ slug }) => (slug ? '70vh' : '76vh')};
+  height:  ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)};
   overflow-y: scroll;
   overflow-x: hidden;
 

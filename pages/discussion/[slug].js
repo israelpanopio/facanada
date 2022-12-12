@@ -23,7 +23,7 @@ return (
         {posts.map((post, index ) => (
               <DiscussionCard key={index} post={post.node} title={post.node.title} />
             ))} 
-        <GoogleAds />
+        {/* <GoogleAds /> */}
           <div id="fb-root"></div>
           <p>Can't find what you're looking for? Let's discuss in the comments section below.</p>
           <div className="fb-comments" data-href={`https://www.ph2canada.com/discussion/${category.slug}`} data-width="100%" data-numposts="1"></div>
