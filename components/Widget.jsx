@@ -60,6 +60,7 @@ const Sidebar = styled.nav`
 
   @media screen and (max-width: 900px) {
   overflow: visible;
+  height: auto;
   }
 `
 
