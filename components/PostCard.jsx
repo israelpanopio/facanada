@@ -40,7 +40,7 @@ export const PostCardItem = styled.div`
   padding: 10px;
 }
 
-@media screen and (max-width: 000px) {
+@media screen and (max-width: 900px) {
 width: 90vw;
 }
 `
