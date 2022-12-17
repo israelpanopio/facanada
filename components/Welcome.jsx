@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link';
 import styled from "styled-components";
 import { FaTimes } from 'react-icons/fa';
 import { Main, Title, Description, Body } from '../components/sharedstyles'

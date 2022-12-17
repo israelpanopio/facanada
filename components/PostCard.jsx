@@ -39,6 +39,10 @@ export const PostCardItem = styled.div`
   background-color: #ffc4bc;
   padding: 10px;
 }
+
+@media screen and (max-width: 000px) {
+width: 90vw;
+}
 `
 const ImagePreview = styled.div`
   padding-top: 45%;

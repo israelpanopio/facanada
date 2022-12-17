@@ -4,13 +4,13 @@ import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
 import { FaCalendarWeek } from 'react-icons/fa';
-import { GoogleAds, InFeedAds } from '../components';
+import { DesktopAds, GoogleAds, InFeedAds } from '../components';
 
 const PostDetail = ({ post }) => {
 
   return (
     <Post>
-    <InFeedAds />        
+    <DesktopAds />        
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
@@ -23,7 +23,7 @@ const PostDetail = ({ post }) => {
         : ''}
         {post.content3 ? 
           <>
-          <InFeedAds />  
+          <GoogleAds />  
           <RichText content={post.content3.raw.children} />
           </> 
         : ''}
