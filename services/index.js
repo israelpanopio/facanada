@@ -160,15 +160,12 @@ export const getLatests= async (slug) => {
                         slug
                         title
                         content {
-                            raw
-                            text
                             markdown
                         }
                         featuredImage {
                             url
                         }
                         categories {
-                            name
                             slug
                         }
                     }
