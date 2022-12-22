@@ -9,7 +9,7 @@ import { Cntr, CategoryTitle } from '../category/[slug]';
 import styled from 'styled-components';
 
 
-const CategoryDetails = ({ category, posts }) => {
+const DiscussionDetails = ({ category, posts }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
   const numberPages = (Math.ceil(posts.pageInfo.pageSize / 10));
@@ -50,7 +50,7 @@ return (
   )
 }
 
-export default CategoryDetails
+export default DiscussionDetails
 
 export async function getStaticProps({ params }) {
   const posts = await getLatests(params.slug);
