@@ -2,7 +2,6 @@ import { request, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-
 export const getFeaturedPosts = async () => {
     const query = gql`
     query MyQuery {
@@ -148,11 +147,11 @@ export const getFeaturedCategoryPost= async (slug) => {
 
 export const getLatests= async (slug) => {
     const query = gql`
-      query GetCategoryPost($slug: String!) {
+      query getLatests($slug: String!) {
             postsConnection(
                 where: {categories_some: {slug: $slug}}
                 orderBy: publishedAt_DESC
-                first: 30
+                first: 99
             ) {
                 edges {
                     cursor
@@ -174,12 +173,38 @@ export const getLatests= async (slug) => {
                         }
                     }
                 }
+                pageInfo {
+                    pageSize
+                  }
             }
         }    
     `
     const result = await request(graphqlAPI, query, { slug });
 
-    return result.postsConnection.edges;
+    return result.postsConnection;
+};
+
+
+export const getPaginatedPosts = async (skip) => {
+    const query = gql`
+    query GetPostDetails($skip: Int) {
+        postsConnection(orderBy: publishedAt_DESC, first: 6, skip: $skip) {
+          edges {
+            node {
+              title
+            }
+          }
+          pageInfo {
+            hasNextPage
+            hasPreviousPage
+            pageSize
+          }
+        }
+      }
+    `
+    const result = await request(graphqlAPI, query, {skip});
+    
+    return result.postsConnection.edges
 };
 
 

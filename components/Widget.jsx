@@ -54,7 +54,7 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  height:  ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)};
+  height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)};
   overflow-y: scroll;
   overflow-x: hidden;
 

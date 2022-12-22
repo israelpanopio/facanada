@@ -33,7 +33,7 @@ export const PostCardItem = styled.div`
   width: 95%;
   cursor: pointer;
   border-radius: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 
   &:hover{
   background-color: #ffc4bc;
