@@ -181,30 +181,6 @@ export const getLatests= async (slug) => {
     return result.postsConnection;
 };
 
-
-export const getPaginatedPosts = async (skip) => {
-    const query = gql`
-    query GetPostDetails($skip: Int) {
-        postsConnection(orderBy: publishedAt_DESC, first: 6, skip: $skip) {
-          edges {
-            node {
-              title
-            }
-          }
-          pageInfo {
-            hasNextPage
-            hasPreviousPage
-            pageSize
-          }
-        }
-      }
-    `
-    const result = await request(graphqlAPI, query, {skip});
-    
-    return result.postsConnection.edges
-};
-
-
 export const getPostDetails = async (slug) => {
     const query = gql`
         query GetPostDetails($slug: String!) {
