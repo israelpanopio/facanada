@@ -15,8 +15,8 @@ export default function About() {
         <CategoryTitle>About Us</CategoryTitle>
         <TogglePageLeft><Link  href="/"><FaRegHandPointLeft /> Back to Home</Link></TogglePageLeft>
         <AboutUs />
-          <div className="fb-comments" data-href="https://www.ph2canada.com/about" data-width="800" data-numposts="5"></div>
-       <p>Can't see the comment's section? <button onClick={refreshPage}>Click me to reload!</button></p>
+          {/* <div className="fb-comments" data-href="https://www.ph2canada.com/about" data-width="800" data-numposts="5"></div>
+       <p>Can't see the comment's section? <button onClick={refreshPage}>Click me to reload!</button></p> */}
       </Col>
       <Col>
         <SidebarNav>

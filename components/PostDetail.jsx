@@ -17,19 +17,19 @@ const PostDetail = ({ post }) => {
       <RichText content={post.content.raw.children} />
         {post.content2 ? 
           <>
-          <InFeedAds />  
+          {/* <InFeedAds />   */}
           <RichText content={post.content2.raw.children} />
           </> 
         : ''}
         {post.content3 ? 
           <>
-          <GoogleAds />  
+          {/* <GoogleAds />   */}
           <RichText content={post.content3.raw.children} />
           </> 
         : ''}
         {post.content4 ? 
           <>
-          <InFeedAds />  
+          {/* <InFeedAds />   */}
           <RichText content={post.content4.raw.children} />
           </> 
         : ''}

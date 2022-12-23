@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleAds, PostCard } from '../../components';
+import { PostCard } from '../../components';
 import { Row, TogglePageRight } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getFeaturedCategoryPost } from '../../services';
@@ -24,7 +24,6 @@ return (
             <PostCard key={index} post={post.node} title={post.node.title} />
           ))} 
       </Row>
-      {/* <GoogleAds /> */}
     </Cntr>
   )
 }

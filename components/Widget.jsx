@@ -26,7 +26,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    {slug ? <HideAds><DesktopAds /></HideAds> : ''}
+    {/* {slug ? <HideAds><DesktopAds /></HideAds> : ''} */}
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
@@ -34,9 +34,9 @@ const Widget = ({ categories, slug }) => {
           <Items slug={slug}>
             {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-              {slug ? <InFeedAds /> : ''}
+              {/* {slug ? <InFeedAds /> : ''} */}
               </>))}
-             {slug ? <GoogleAds /> : ''}
+             {/* {slug ? <GoogleAds /> : ''} */}
           </Items>
         </RelatedPosts>
       </Sidebar>
@@ -54,7 +54,8 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)};
+  ${'' /* height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)}; */}
+  height: calc(100vh - 60px);
   overflow-y: scroll;
   overflow-x: hidden;
 

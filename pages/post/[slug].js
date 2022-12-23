@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState }  from 'react'
 import { getPosts, getPostDetails } from '../../services';
 import { useRouter } from 'next/router';
 import styled from 'styled-components'
@@ -19,7 +19,6 @@ if (router.isFallback) {
   return (
     <>
     <h1>Loading...</h1>
-      {/* <Loader /> */}
     </>
   )
 } 
@@ -32,7 +31,6 @@ return (<>
           <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${post.slug}`} data-width="100%" data-numposts="1"></div>
         </Comments>
         <PostDetail post={post} />
-        {/* <AdjacentPosts slug={post.slug} publishedAt={post.publishedAt} /> */}
       </Col>
       <Col>
         <SidebarNav>

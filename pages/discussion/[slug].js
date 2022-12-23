@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {  DiscussionCard, GoogleAds,  } from '../../components';
+import {  DiscussionCard, } from '../../components';
 import { TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
@@ -12,9 +12,9 @@ import styled from 'styled-components';
 const DiscussionDetails = ({ category, posts }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
-  const numberPages = (Math.ceil(posts.pageInfo.pageSize / 10));
+  const pageContents = posts.pageInfo.pageSize
+  const numberPages = (Math.ceil(pageContents / 10));
   const [pagePosts, setPagePosts] = useState([]);
-  console.log(numberPages);
 
   useEffect(() => {
     setPagePosts(posts.edges.slice((page * 10 -10 ), (page * 10)));
