@@ -36,6 +36,10 @@ const Layout = ({ children }) => {
         nonce="bEwmLXkc"
         lazy="false"
       /> */}
+      <Script 
+        type='text/javascript' 
+        src='//pl18141475.highcpmrevenuenetwork.com/1a/c9/38/1ac9386259a4eebf36bdc7df2328194b.js'>
+      </Script>
       <Togglebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
       <Container>
