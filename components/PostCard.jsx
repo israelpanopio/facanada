@@ -14,7 +14,6 @@ const PostCard = ({ post }) => {
     <Title style={{margin:"0"}}>{post.title}</Title>
     <Excerpt> {(post.content.markdown).slice(0, 200)}...</Excerpt>
     <MobileExcerpt>{(post.content.markdown).slice(0, 100)}...</MobileExcerpt>
-    
   </PostCardItem></a>)
 }
 

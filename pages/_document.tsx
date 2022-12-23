@@ -1,6 +1,5 @@
 import Document, { DocumentContext } from 'next/document'
 import Head from 'next/head'
-import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -15,7 +14,7 @@ export default class MyDocument extends Document {
             sheet.collectStyles(
               <>
                 <Head>
-                  <title>CADreamers</title>
+                  <title>Filipinos Aspirants to Canada</title>
                   <meta name="Filipinos Aspirants to Canada" content="by Israel Panopio" />
                   <link rel="icon" href="/favicon.ico" />
                   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>

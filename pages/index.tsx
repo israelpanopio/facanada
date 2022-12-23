@@ -4,7 +4,7 @@ import { Body, Col, SidebarNav } from '../components/sharedstyles'
 import { PostCard, Welcome, Widget } from '../components';
 import { getFeaturedPosts } from '../services';
 
-export default function Home({ posts, isSlug }) {
+export default function Home({ posts }) {
   // const [welcome, setWelcome] = useState(true);
 
   // const toggleWelcome = () => {

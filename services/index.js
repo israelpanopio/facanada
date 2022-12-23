@@ -12,14 +12,6 @@ export const getFeaturedPosts = async () => {
           ) {
             edges {
                 node {
-                author {
-                    bio
-                    name
-                    id
-                    photo {
-                    url
-                    }
-                }
                 publishedAt
                 categories {
                     name
@@ -33,8 +25,6 @@ export const getFeaturedPosts = async () => {
                 }
                 featuredPost
                 content {
-                    raw
-                    text
                     markdown
                 }
                 }
