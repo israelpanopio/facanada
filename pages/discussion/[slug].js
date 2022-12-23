@@ -9,15 +9,15 @@ import { Cntr, CategoryTitle } from '../category/[slug]';
 import styled from 'styled-components';
 
 
-const DiscussionDetails = ({ category, posts }) => {
+const DiscussionDetails = ({ category, posts, pageSize }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
-  const pageContents = posts.pageInfo.pageSize
-  const numberPages = (Math.ceil(pageContents / 10));
+  // const pageContents = posts.pageInfo.pageSize
+  const numberPages = (Math.ceil(pageSize / 10));
   const [pagePosts, setPagePosts] = useState([]);
 
   useEffect(() => {
-    setPagePosts(posts.edges.slice((page * 10 -10 ), (page * 10)));
+    setPagePosts(posts.slice((page * 10 -10 ), (page * 10)));
   }, [page]);
 
 if (router.isFallback) {
@@ -58,7 +58,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { 
-      posts,
+      posts: posts.edges,
+      pageSize: posts.pageInfo.pageSize,
       category: theCategories.find((({ slug }) => slug === params.slug )) },
       revalidate: 1,
   };
