@@ -25,7 +25,7 @@ const Togglebar = ({isOpen, toggle}) => {
                 </SideBarMenu>
                 {categories.map((category) => (
                     <SideBarMenu key={category.slug}>
-                        <SideBarLink href={`/${category.slug === "news" ? "discussion" : "category"}/${category.slug}`} onClick={toggle}>
+                        <SideBarLink href={`/${category.slug === "news" ? "discussion" : "category"}/${category.slug}?page=1`} onClick={toggle}>
                             {category.name}
                         </SideBarLink>
                     </SideBarMenu>

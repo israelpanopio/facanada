@@ -28,7 +28,7 @@ if (router.isFallback) {
 return (
     <Cntr>
         <CategoryTitle>{category.name}</CategoryTitle>
-        {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}`}><FaRegHandPointLeft /> Back to Featured Posts</Link></TogglePageLeft>}
+        {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><FaRegHandPointLeft /> Back to Featured Posts</Link></TogglePageLeft>}
         {pagePosts.map((post, index ) => (
               <DiscussionCard key={index} post={post.node} title={post.node.title} />
             ))} 
