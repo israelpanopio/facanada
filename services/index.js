@@ -115,7 +115,7 @@ export const getFeaturedCategoryPost= async (slug) => {
             postsConnection(
                 where: {categories_some: {slug: $slug}, featuredPost: true}
                 orderBy: createdAt_ASC
-                first: 12
+                first: 30
             ) {
                 edges {
                     cursor
@@ -137,12 +137,15 @@ export const getFeaturedCategoryPost= async (slug) => {
                         }
                     }
                 }
+                pageInfo {
+                    pageSize
+                  }
             }
         }    
     `
     const result = await request(graphqlAPI, query, { slug });
 
-    return result.postsConnection.edges;
+    return result.postsConnection;
 };
 
 export const getLatests= async (slug) => {

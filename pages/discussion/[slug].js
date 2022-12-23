@@ -12,7 +12,6 @@ import styled from 'styled-components';
 const DiscussionDetails = ({ category, posts, pageSize }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
-  // const pageContents = posts.pageInfo.pageSize
   const numberPages = (Math.ceil(pageSize / 10));
   const [pagePosts, setPagePosts] = useState([]);
 

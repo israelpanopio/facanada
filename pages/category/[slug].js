@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect }  from 'react'
 import { PostCard } from '../../components';
 import { Row, TogglePageRight } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getFeaturedCategoryPost } from '../../services';
 import styled from 'styled-components';
-import { FaRegHandPointRight } from 'react-icons/fa';
+import { FaRegHandPointRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
 
-const CategoryDetails = ({ posts, category }) => {
+const CategoryDetails = ({ posts, category, pageSize }) => {
   const router = useRouter();
+  const page = parseInt(router.query.page);
+  const numberPages = (Math.ceil(pageSize / 10));
+  const [pagePosts, setPagePosts] = useState([]);
+
+  useEffect(() => {
+    setPagePosts(posts.slice((page * 6 -6 ), (page * 6)));
+  }, [category]);
 
 if (router.isFallback) {
   return (
@@ -20,10 +27,23 @@ return (
     <Cntr>
       <CategoryTitle>{category.name}</CategoryTitle>
       <TogglePageRight><Link href={`/discussion/${category.slug}?page=1`}>Proceed to Discussions <FaRegHandPointRight /></Link></TogglePageRight>
-      <Row>{posts.map((post, index ) => (
+      <Row>{pagePosts.map((post, index ) => (
             <PostCard key={index} post={post.node} title={post.node.title} />
           ))} 
       </Row>
+          <Page>  Page {page} of {numberPages} </Page>
+          <Pages page={page}>
+            {page == 1 ? '' : 
+              <Link href={`/category/${category.slug}?page=${page - 1}`}>
+                <FaAngleLeft/>Previous 
+              </Link>
+            }
+            {page == numberPages ? '' : 
+            <Link style={{margin: "auto 0 auto auto"}} href={`/category/${category.slug}?page=${page + 1}`}>
+              Next <FaAngleRight/>
+            </Link>
+            }
+          </Pages>
     </Cntr>
   )
 }
@@ -36,7 +56,8 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { 
-      posts,
+      posts: posts.edges,
+      pageSize: posts.pageInfo.pageSize,
       category: theCategories.find((({ slug }) => slug === params.slug )) },
       revalidate: 1,
   };
@@ -68,4 +89,18 @@ border-bottom: 5px solid red;
 margin-bottom: 0;
 font-size: 30px;
 
+`
+
+const Pages = styled.div`
+  display: grid;
+  grid-template-columns: ${({ page }) => (page == 1 ? '1fr' : `1fr 1fr`)};
+  font-size: 20px;
+  line-height: 1.65em;
+`
+
+const Page = styled.div`
+font-size: 20px;
+line-height: 1.65em;
+  text-align: center;
+  margin: auto
 `
