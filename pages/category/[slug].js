@@ -10,12 +10,13 @@ import Link from 'next/link';
 const CategoryDetails = ({ posts, category, pageSize }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
-  const numberPages = (Math.ceil(pageSize / 10));
+  const showItems = 6;
+  const numberPages = (Math.ceil(pageSize / showItems));
   const [pagePosts, setPagePosts] = useState([]);
 
   useEffect(() => {
-    setPagePosts(posts.slice((page * 6 -6 ), (page * 6)));
-  }, [category]);
+    setPagePosts(posts.slice((page * showItems - showItems ), (page * showItems)));
+  }, [category, page]);
 
 if (router.isFallback) {
   return (
@@ -91,14 +92,14 @@ font-size: 30px;
 
 `
 
-const Pages = styled.div`
+export const Pages = styled.div`
   display: grid;
   grid-template-columns: ${({ page }) => (page == 1 ? '1fr' : `1fr 1fr`)};
   font-size: 20px;
   line-height: 1.65em;
 `
 
-const Page = styled.div`
+export const Page = styled.div`
 font-size: 20px;
 line-height: 1.65em;
   text-align: center;

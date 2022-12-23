@@ -5,19 +5,18 @@ import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
 import { FaRegHandPointLeft, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
-import { Cntr, CategoryTitle } from '../category/[slug]';
-import styled from 'styled-components';
-
+import { Cntr, CategoryTitle, Page, Pages } from '../category/[slug]';
 
 const DiscussionDetails = ({ category, posts, pageSize }) => {
   const router = useRouter();
   const page = parseInt(router.query.page);
-  const numberPages = (Math.ceil(pageSize / 10));
+  const showItems = 10;
+  const numberPages = (Math.ceil(pageSize / showItems));
   const [pagePosts, setPagePosts] = useState([]);
 
   useEffect(() => {
-    setPagePosts(posts.slice((page * 10 -10 ), (page * 10)));
-  }, [page]);
+    setPagePosts(posts.slice((page * showItems -showItems ), (page * showItems)));
+  }, [category, page]);
 
 if (router.isFallback) {
   return (
@@ -72,17 +71,3 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-
-const Pages = styled.div`
-  display: grid;
-  grid-template-columns: ${({ page }) => (page == 1 ? '1fr' : `1fr 1fr`)};
-  font-size: 20px;
-  line-height: 1.65em;
-`
-
-const Page = styled.div`
-font-size: 20px;
-line-height: 1.65em;
-  text-align: center;
-  margin: auto
-`
