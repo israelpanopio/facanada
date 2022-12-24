@@ -3,6 +3,16 @@ import styled from 'styled-components'
 import Script from "next/script";
 
 const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {  
+  const [commentLink, setCommentLink] = useState();
+
+  useEffect(() => {
+    if (slug.slice(0, 5) == "faqs/") {
+      setCommentLink(`${slug}`)
+    } else {
+      setCommentLink(`post/${slug}`)
+    }
+  })
+  
       return (<>
         <Script
           id="fb-root" 
@@ -12,7 +22,7 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
         />
         <SocialDiv>
         <Content>
-          <div className="fb-like" data-href={`https://www.ph2canada.com/post/${slug}`} data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+          <div className="fb-like" data-href={`https://www.ph2canada.com/${commentLink}`} data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
           <FButton onClick={toggleMobileComments}>{openMobileComments ? 'Close Comments' : 'See Comments'}</FButton>
           </Content></SocialDiv>
       </>

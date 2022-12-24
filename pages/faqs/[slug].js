@@ -9,7 +9,6 @@ import { animateScroll as scroll } from 'react-scroll'
 const FaqsDetail = ({ post }) => {
   const router = useRouter();
   const [openMobileComments, setOpenMobileComments] = useState(false);
-  console.log(post.slug);
 
   const toggleMobileComments = () => {
     setOpenMobileComments(!openMobileComments)
