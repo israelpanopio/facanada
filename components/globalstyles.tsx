@@ -75,6 +75,32 @@ const GlobalStyle = createGlobalStyle`
   * {
     font-family: "Noto Sans",sans-serif;
   }
+
+  u {
+    background-color: #26374a;
+    border-color: #26374a;
+    text-decoration: none;
+    font-family: Lato,sans-serif;
+    border-style: outset;
+    height: auto;
+    min-height: 36px;
+    min-width: 36px;
+    white-space: normal;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 1.4375;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 `
 
 export default GlobalStyle

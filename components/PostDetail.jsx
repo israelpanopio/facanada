@@ -3,8 +3,9 @@ import { RichText } from "@graphcms/rich-text-react-renderer";
 import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
-import { FaCalendarWeek } from 'react-icons/fa';
+import { FaCalendarWeek, FaAngleRight } from 'react-icons/fa';
 import { DesktopAds, GoogleAds, InFeedAds } from '../components';
+import Link from 'next/link';
 
 const PostDetail = ({ post }) => {
 
@@ -14,7 +15,7 @@ const PostDetail = ({ post }) => {
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>  
       <h1>{post.title}</h1>
-      <RichText content={post.content.raw.children} />
+      <RichText content={post.content.raw} />
         {post.content2 ? 
           <>
           {/* <InFeedAds />   */}
@@ -32,6 +33,9 @@ const PostDetail = ({ post }) => {
           {/* <InFeedAds />   */}
           <RichText content={post.content4.raw.children} />
           </> 
+        : ''}
+        {post.next ?
+          <PageLink href={`/post/${post.next}`}>Next <FaAngleRight /></PageLink>
         : ''}
         <GoogleAds />
     </Post>
@@ -63,4 +67,19 @@ max-width: 95%;
         max-height: 90vh;
         
     }
+`
+
+const PageLink = styled(Link)`
+  display: inline-block;
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 10px 16px;
+  background-color: #eaebed;
+  border: 1px solid #dcdee1;
+  border-radius: 4px;
+  font-size: 20px;
+  line-height: 1.65em;
+  box-sizing: border-box;
 `

@@ -82,11 +82,13 @@ grid-template-columns: 1fr 1fr;
 `
 
 export const TogglePageRight = styled.div`
+  margin: 5px auto 10px;
   text-align: right;
   font-size:18px;
   height: 30px;
 `
 export const TogglePageLeft = styled.div`
+  margin: 5px auto 15px;
   text-align: Left;
   font-size:18px;
   height: 30px;

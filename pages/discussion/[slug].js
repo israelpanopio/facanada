@@ -3,9 +3,9 @@ import {  DiscussionCard, } from '../../components';
 import { TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
-import { FaRegHandPointLeft, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FaRegHandPointLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
-import { Cntr, CategoryTitle, Page, Pages } from '../category/[slug]';
+import { Cntr, CategoryTitle, Page, Pages, PageLink } from '../category/[slug]';
 
 const DiscussionDetails = ({ category, posts, pageSize }) => {
   const router = useRouter();
@@ -27,21 +27,21 @@ if (router.isFallback) {
 return (
     <Cntr>
         <CategoryTitle>{category.name}</CategoryTitle>
-        {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><FaRegHandPointLeft /> Back to Featured Posts</Link></TogglePageLeft>}
+        {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><u><FaRegHandPointLeft /> Back to Guides</u></Link></TogglePageLeft>}
         {pagePosts.map((post, index ) => (
               <DiscussionCard key={index} post={post.node} title={post.node.title} />
             ))} 
           <Page>  Page {page} of {numberPages} </Page>
           <Pages page={page}>
             {page == 1 ? '' : 
-              <Link href={`/discussion/${category.slug}?page=${page - 1}`}>
-                <FaAngleLeft/>Previous 
-              </Link>
+              <PageLink href={`/discussion/${category.slug}?page=${page - 1}`}>
+                <FaArrowLeft/> Previous 
+              </PageLink>
             }
             {page == numberPages ? '' : 
-            <Link style={{margin: "auto 0 auto auto"}} href={`/discussion/${category.slug}?page=${page + 1}`}>
-              Next <FaAngleRight/>
-            </Link>
+            <PageLink style={{margin: "auto 0 auto auto"}} href={`/discussion/${category.slug}?page=${page + 1}`}>
+              Next <FaArrowRight/>
+            </PageLink>
             }
           </Pages>
     </Cntr>

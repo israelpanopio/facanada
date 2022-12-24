@@ -20,7 +20,7 @@ export default function Home({ posts }) {
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />
         ))} 
-        <h2>Go to Frequently Asked Questions <FaAngleRight /></h2>
+        {/* <h2>Go to Frequently Asked Questions <FaAngleRight /></h2> */}
       </Col>
       <Col>
         <SidebarNav>

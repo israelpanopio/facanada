@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
     if(window.FB){
       window.FB.XFBML.parse();
       }
-    //  console.log(window.FB)
      const facebookScript = document.createElement("script");
      facebookScript.async = true;
      facebookScript.src = `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=${process.env.FACEBOOK_APP_ID}&autoLogAppEvents=1`;

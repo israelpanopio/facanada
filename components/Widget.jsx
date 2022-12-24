@@ -7,7 +7,6 @@ import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments, Goog
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
-  console.log(slug);
 
   const toggleComments = () => {
     setOpenComments(!openComments);

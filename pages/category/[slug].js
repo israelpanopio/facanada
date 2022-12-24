@@ -4,7 +4,7 @@ import { Row, TogglePageRight } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getFeaturedCategoryPost } from '../../services';
 import styled from 'styled-components';
-import { FaRegHandPointRight, FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { FaRegHandPointRight, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 
 const CategoryDetails = ({ posts, category, pageSize }) => {
@@ -27,7 +27,7 @@ if (router.isFallback) {
 return (
     <Cntr>
       <CategoryTitle>{category.name}</CategoryTitle>
-      <TogglePageRight><Link href={`/discussion/${category.slug}?page=1`}>Proceed to Discussions <FaRegHandPointRight /></Link></TogglePageRight>
+      <TogglePageRight><Link href={`/discussion/${category.slug}?page=1`}><u>See Discussions <FaRegHandPointRight /></u></Link></TogglePageRight>
       <Row>{pagePosts.map((post, index ) => (
             <PostCard key={index} post={post.node} title={post.node.title} />
           ))} 
@@ -35,14 +35,14 @@ return (
           <Page>  Page {page} of {numberPages} </Page>
           <Pages page={page}>
             {page == 1 ? '' : 
-              <Link href={`/category/${category.slug}?page=${page - 1}`}>
-                <FaAngleLeft/>Previous 
-              </Link>
+              <PageLink style={{margin: "auto auto auto 0"}} href={`/category/${category.slug}?page=${page - 1}`}>
+                <FaArrowLeft/> Previous 
+              </PageLink>
             }
             {page == numberPages ? '' : 
-            <Link style={{margin: "auto 0 auto auto"}} href={`/category/${category.slug}?page=${page + 1}`}>
-              Next <FaAngleRight/>
-            </Link>
+            <PageLink style={{margin: "auto 0 auto auto"}} href={`/category/${category.slug}?page=${page + 1}`}>
+              Next <FaArrowRight/>
+            </PageLink>
             }
           </Pages>
     </Cntr>
@@ -95,8 +95,19 @@ font-size: 30px;
 export const Pages = styled.div`
   display: grid;
   grid-template-columns: ${({ page }) => (page == 1 ? '1fr' : `1fr 1fr`)};
+`
+
+export const PageLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  padding: 10px 16px;
+  background-color: #eaebed;
+  border: 1px solid #dcdee1;
+  border-radius: 4px;
   font-size: 20px;
   line-height: 1.65em;
+  box-sizing: border-box;
 `
 
 export const Page = styled.div`
