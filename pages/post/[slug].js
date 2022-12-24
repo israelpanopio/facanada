@@ -60,11 +60,7 @@ export async function getStaticPaths() {
   const posts = await getPosts();
 
   return{
-    paths: [
-      {
-        params: { slug: 'pangarap-ko-talagang-makapag-canada'}
-      }
-    ],
+    paths: posts.map(({ node: { slug }}) => ({ params: { slug }})),
     fallback: true,
   }
 }

@@ -69,7 +69,7 @@ max-width: 95%;
     }
 `
 
-const PageLink = styled(Link)`
+const PageLink = styled.a`
   display: inline-block;
   float: right;
   text-decoration: none;
