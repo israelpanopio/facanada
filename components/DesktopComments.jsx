@@ -11,6 +11,7 @@ const DesktopComments = ({ slug, openComments }) => {
       setCommentLink(`post/${slug}`)
     }
   })
+  
   return (
     <Comments id="comments" openComments={openComments} >
       <div id="fb-root"></div>
