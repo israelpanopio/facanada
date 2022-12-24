@@ -35,12 +35,12 @@ const Widget = ({ categories, slug }) => {
           <Items slug={slug}>
             {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-              <Script 
+              {/* <Script 
                 async="async" 
                 data-cfasync="false" 
                 src="//pl18141240.highcpmrevenuenetwork.com/8dbdc1a26dcd57378770c789e4d99f19/invoke.js">
               </Script>
-              <div id="container-8dbdc1a26dcd57378770c789e4d99f19"></div>
+              <div id="container-8dbdc1a26dcd57378770c789e4d99f19"></div> */}
               {/* {slug ? <InFeedAds /> : ''} */}
               </>))}
              {/* {slug ? <GoogleAds /> : ''} */}
