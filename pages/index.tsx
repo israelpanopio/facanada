@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCanadianMapleLeaf } from 'react-icons/fa';
+import { FaCanadianMapleLeaf, FaAngleRight } from 'react-icons/fa';
 import { Body, Col, SidebarNav } from '../components/sharedstyles'
 import { PostCard, Welcome, Widget } from '../components';
 import { getFeaturedPosts } from '../services';
@@ -20,6 +20,7 @@ export default function Home({ posts }) {
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />
         ))} 
+        <h2>Go to Frequently Asked Questions <FaAngleRight /></h2>
       </Col>
       <Col>
         <SidebarNav>

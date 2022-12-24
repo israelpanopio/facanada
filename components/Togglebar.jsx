@@ -30,6 +30,11 @@ const Togglebar = ({isOpen, toggle}) => {
                         </SideBarLink>
                     </SideBarMenu>
                 ))}
+                {/* <SideBarMenu>
+                    <SideBarLink href="/faqs" onClick={toggle}>
+                    FAQS
+                    </SideBarLink>
+                </SideBarMenu> */}
             </SideBarWrapper>
         </SideBarContainer>
     );
@@ -101,14 +106,14 @@ const SideBarLink = styled(Link)`
     transition: 0.2s ease-in-out;
     color: white;
     cursor: pointer;
-    padding: 1rem;
+    padding: 0.3rem;
 
 &:hover {
     background-color: #fff;
     color: red;
     transition: 0.2s ease-in-out;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1rem;
     font-size: 2rem;
     font-weight: bold;
 `

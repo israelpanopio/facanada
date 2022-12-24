@@ -3,18 +3,18 @@ import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
 import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments, GoogleAds } from '../components';
-import Script from "next/script";
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [openComments, setOpenComments] = useState(true);
+  console.log(slug);
 
   const toggleComments = () => {
     setOpenComments(!openComments);
   }
   
   useEffect(() => {
-    if (slug) {
+    if (slug && slug !== "pangarap-ko-talagang-makapag-canada") {
       getSimilarPosts(categories, slug).then((result) => {
         setRelatedPosts(result);
       });

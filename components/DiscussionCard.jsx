@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
 import { AuthorDiv } from './sharedstyles';
 
 const DiscussionCard = ({ post }) => {
-  return (<a href={`/post/${post.slug}`} style={{textDecoration:"none"}}>
+  const [link, setLink] = useState();
+
+  useEffect(() => {
+    if (post.slug.slice(0, 5) == "faqs/") {
+      setLink(`/${post.slug}`)
+    } else {
+      setLink(`/post/${post.slug}`)
+    }
+  })
+
+  return (<a href={`${link}`} style={{textDecoration:"none"}}>
   <PostCardItem>
     <ImagePreview
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>

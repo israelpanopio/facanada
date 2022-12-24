@@ -34,6 +34,9 @@ const NavBar = ({ toggle }) => {
                                     <NavLink href={`/${category.slug === "news" ? "discussion" : "category"}/${category.slug}?page=1`}>{category.name}</NavLink>
                                 </NavItem>
                             ))}
+                        {/* <NavItem>
+                            <NavLink href="/faqs">FAQs</NavLink>
+                        </NavItem> */}
                     </NavMenu>
             </NavbarContainer>
         </Nav>

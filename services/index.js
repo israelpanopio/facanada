@@ -7,16 +7,12 @@ export const getFeaturedPosts = async () => {
     query MyQuery {
         postsConnection(
             where: {featuredPost: true}
-            first: 12
+            first: 5
             orderBy: featuredPriority_ASC
           ) {
             edges {
                 node {
                 publishedAt
-                categories {
-                    name
-                    slug
-                }
                 slug
                 title
                 id
@@ -43,7 +39,11 @@ export const getSimilarPosts = async (categories, slug) => {
     const query = gql`
         query GetPostDetails($slug: String!, $categories: [String!]) {
             posts(
-                where: {slug_not: $slug, AND: {categories_some: { slug_in: $categories}}}
+                where: {
+                    slug_not: $slug, 
+                    slug_not_contains: "faqs/"
+                    AND: {
+                        categories_some: { slug_in: $categories}}}
                 orderBy: publishedAt_DESC
                 first: 4
             ) {
@@ -66,7 +66,8 @@ export const getRecentPosts = async () => {
         query GetPostDetails(){
             posts(
                 orderBy: publishedAt_DESC
-                first: 6
+                first: 6, 
+                where: {slug_not_contains: "faqs/"}
             ) {
                 title
                 featuredImage {
@@ -215,36 +216,54 @@ export const getPostDetails = async (slug) => {
     return result.post;
 };
 
+export const getFaqsDetails = async (slug) => {
+    const query = gql`
+        query GetFaqsDetails($slug: String!) {
+            post(where: { slug: $slug } ) {
+                publishedAt
+                categories {
+                    id
+                    slug
+                    name
+                }
+                slug
+                title
+                featuredImage {
+                    url
+                }
+                content {
+                    raw
+                    markdown
+                }
+                content2 {
+                    raw
+                    markdown
+                }
+                content3 {
+                    raw
+                    markdown
+                }
+                content4 {
+                    raw
+                    markdown
+                }
+            }            
+        }
+      
+    `
+
+    const result = await request(graphqlAPI, query, { slug });
+
+    return result.post;
+};
+
 export const getPosts = async () => {
     const query = gql`
         query MyQuery {
             postsConnection(first: 999) {
                 edges {
                     node {
-                    author {
-                        bio
-                        name
-                        id
-                        photo {
-                        url
-                        }
-                    }
-                    publishedAt
-                    categories {
-                        name
-                        slug
-                    }
                     slug
-                    title
-                    id
-                    featuredImage {
-                        url
-                    }
-                    featuredPost
-                    content {
-                        raw
-                        markdown
-                    }
                     }
                 }
             }
@@ -254,6 +273,20 @@ export const getPosts = async () => {
     const result = await request(graphqlAPI, query);
 
     return result.postsConnection.edges
+};
+
+export const getFaqs = async () => {
+    const query = gql`
+        query MyQuery {
+            posts(where: {slug_contains: "faqs/"}) {
+            slug
+            }
+        }      
+      
+    `
+    const result = await request(graphqlAPI, query);
+
+    return result.posts;
 };
 
 export const getSearchPosts = async (searchKeyword) => {
