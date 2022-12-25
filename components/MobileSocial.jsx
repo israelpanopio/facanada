@@ -33,6 +33,8 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
 export default MobileSocial
 
 const SocialDiv = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 50px;
   position: sticky;
   bottom: 0;
   margin-bottom: 0;
@@ -45,8 +47,7 @@ const SocialDiv = styled.div`
 `
 const Content = styled.div`
   @media screen and (max-width: 900px) {
-  display: block;
-  max-width: 90vw;
+  max-width: 92vw;
   margin: auto;
 }
 `
@@ -61,7 +62,7 @@ const FButton = styled.button`
   margin-bottom: 0;
   padding: 6px 10px;
   border-radius: 4px;
-  width: calc(90vw - 185px);
+  width: calc(80vw - 185px);
   z-index: 12;
   font-weight: bold;
 
