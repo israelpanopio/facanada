@@ -21,10 +21,11 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
           nonce="fERdatdU"
         />
         <SocialDiv>
-        <Content>
-          <div className="fb-like" data-href={`https://www.ph2canada.com/${commentLink}`} data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-          <FButton onClick={toggleMobileComments}>{openMobileComments ? 'Close Comments' : 'See Comments'}</FButton>
-          </Content></SocialDiv>
+          <Content>
+            <div className="fb-like" data-href={`https://www.ph2canada.com/${commentLink}`} data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+            <FButton onClick={toggleMobileComments}>{openMobileComments ? 'Close Comments' : 'See Comments'}</FButton>
+          </Content>
+        </SocialDiv>
       </>
     )
 }

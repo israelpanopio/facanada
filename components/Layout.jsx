@@ -28,6 +28,14 @@ const Layout = ({ children }) => {
         strategy="beforeInteractive"
         async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
+      <Script 
+        data-name="BMC-Widget" 
+        data-cfasync="false" 
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
+        data-id="israelpanopio" 
+        data-description="Support me on Buy me a coffee!" 
+        data-message="Hello! I hope you found valuable information in this website.You want to buy me a coffee?That's perfect for this weather! I really appreciate it!" 
+        data-color="#ff813f" data-position="Right" data-x_margin="18" data-y_margin="18" />
       {/* <Script
         id="fb-root" 
         async defer crossorigin="anonymous" 
