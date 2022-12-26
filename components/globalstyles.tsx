@@ -101,6 +101,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 4px;
     box-sizing: border-box;
   }
+
 `
 
 export default GlobalStyle

@@ -17,3 +17,4 @@ export { default as MobileSocial } from './MobileSocial';
 export { default as Footer } from './Footer';
 export { default as DiscussionCard } from './DiscussionCard';
 export { default as BuyMeCoffee } from './BuyMeCoffee';
+export { default as Coffee } from './Coffee';

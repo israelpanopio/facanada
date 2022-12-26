@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react'
-import { NavBar, Togglebar, Footer, BuyMeCoffee } from '../components';
+import { NavBar, Togglebar, Footer, Coffee } from '../components';
 import { Container } from './sharedstyles';
 import Script from "next/script";
 
@@ -28,24 +28,13 @@ const Layout = ({ children }) => {
         strategy="beforeInteractive"
         async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      {/* <Script
-        id="fb-root" 
-        async defer crossorigin="anonymous" 
-        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0&appId=366180864923538&autoLogAppEvents=1"
-        nonce="bEwmLXkc"
-        lazy="false"
-      /> */}
-      {/* <Script 
-        type='text/javascript' 
-        src='//pl18141475.highcpmrevenuenetwork.com/1a/c9/38/1ac9386259a4eebf36bdc7df2328194b.js'>
-      </Script> */}
       <Togglebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
       <Container>
         {children}
       </Container>
+      <Coffee />
       <Footer />
-      <BuyMeCoffee />
     </>
   )
 }

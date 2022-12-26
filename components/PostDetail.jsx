@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
 import { FaCalendarWeek, FaAngleRight } from 'react-icons/fa';
-import { DesktopAds, GoogleAds, InFeedAds } from '../components';
+import { BuyMeCoffee, DesktopAds, GoogleAds, InFeedAds } from '../components';
 import Link from 'next/link';
 
 const PostDetail = ({ post }) => {
@@ -34,6 +34,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content4.raw.children} />
           </> 
         : ''}
+        <BuyMeCoffee />
         {post.next ?
           <PageLink href={`/post/${post.next}`}>Next <FaAngleRight /></PageLink>
         : ''}

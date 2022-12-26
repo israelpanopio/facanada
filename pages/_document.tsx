@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
                   <title>Filipinos Aspirants to Canada</title>
                   <meta name="Filipinos Aspirants to Canada" content="by Israel Panopio" />
                   <link rel="icon" href="/favicon.ico" />
-                  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"></link>
+                  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Noto+Sans&display=swap" rel="stylesheet" />
                   <meta property="fb:app_id" content="366180864923538" />
                   <meta property="fb:admins" content="empoyan"/>
                   <Script 
