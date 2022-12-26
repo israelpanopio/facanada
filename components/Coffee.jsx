@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Coffee = () => {
   return (
-    <a href="https://www.buymeacoffee.com/israelpanopio" >
+    <a href="https://www.buymeacoffee.com/israelpanopio" target="_blank" >
     <MobileCoffee href="https://www.buymeacoffee.com/israelpanopio">
         <Br />
         <Icon src="/bmc-logo.svg" />
@@ -30,6 +30,12 @@ const MobileCoffee = styled.div`
   @media screen and (max-width: 900px) {
     width: 45px;
     height: 45px;
+}
+
+&:hover {
+  color: black;
+  box-shadow: 8px 8px 20px grey;
+  padding: 1px;
 }
 `
 const Br = styled.div`

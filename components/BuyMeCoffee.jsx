@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const BuyMeCoffee = () => {
   return (
-    <a style={{textDecoration: "none"}}href="https://www.buymeacoffee.com/israelpanopio" >
+    <a style={{textDecoration: "none"}} href="https://www.buymeacoffee.com/israelpanopio" target="_blank" >
     <MobileCoffee>
       Support this website. Buy me a coffee.
     </MobileCoffee>
@@ -29,5 +29,7 @@ box-sizing: border-box;
 &:hover {
   color: black;
   box-shadow: 5px 5px 10px grey;
+  margin-top: -2px;
+  margin-bottom: 2px;
 }
 `
