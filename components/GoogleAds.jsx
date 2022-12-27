@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 
-const GoogleAds = () => {   
+const GoogleAds = ({ads}) => {   
+  const adSize = "10vh";
+
     useEffect(() => {
       var ads = document.getElementsByClassName("adsbygoogle").length;
       for (var i = 0; i < ads; i++) {
@@ -10,15 +12,28 @@ const GoogleAds = () => {
       }
   }, []);
 
+  if (!ads) {
+    return (<>
+      <ins className="adsbygoogle"
+          style={{display:"block", margin:"auto"}}
+          data-ad-client="ca-pub-4841621324421656"
+          data-ad-slot="6509252855"
+          data-ad-format="auto"
+          data-full-width-responsive="true">
+      </ins>
+    </>
+    )
+  } else {  
   return (
     <ins className="adsbygoogle"
-        style={{display:"block", margin:"auto"}}
+        style={{display:"block", height:`${(ads == "infeed") ? "11vh" : `${(ads == "top") ? "15vh" : ads}`}`}}
+        data-ad-format="fluid"
+        data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-4841621324421656"
-        data-ad-slot="6509252855"
-        data-ad-format="auto"
-        data-full-width-responsive="true">
+        data-ad-slot="6509252855">
     </ins>
   )
+}
 }
 
 export default GoogleAds

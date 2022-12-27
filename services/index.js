@@ -194,19 +194,48 @@ export const getPostDetails = async (slug) => {
                     raw
                     markdown
                 }
+                contentb {
+                    raw
+                }
+                content1 {
+                    raw
+                }
+                content1b {
+                    raw
+                }
                 content2 {
                     raw
-                    markdown
+                }
+                content2b {
+                    raw
                 }
                 content3 {
                     raw
-                    markdown
+                }
+                content3b {
+                    raw
                 }
                 content4 {
                     raw
-                    markdown
+                }
+                content4b {
+                    raw
+                }
+                content5 {
+                    raw
+                }
+                content5b {
+                    raw
                 }
                 next
+                tableOfContents
+                ads
+                ad0
+                ad1
+                ad2
+                ad3
+                ad4
+                ad5
             }            
         }
       

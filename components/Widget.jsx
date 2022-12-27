@@ -62,7 +62,7 @@ const Sidebar = styled.nav`
   z-index: 5;
   ${'' /* height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)}; */}
   height: calc(100vh - 60px);
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   @media screen and (max-width: 900px) {

@@ -108,6 +108,7 @@ export const PageLink = styled(Link)`
   font-size: 20px;
   line-height: 1.65em;
   box-sizing: border-box;
+  max-width: 140px;
 `
 
 export const Page = styled.div`

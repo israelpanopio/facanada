@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react'
-import { NavBar, Togglebar, Footer, Coffee } from '../components';
+import { NavBar, Togglebar, Footer, Coffee, ScrollToTop } from '../components';
 import { Container } from './sharedstyles';
 import Script from "next/script";
 
@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
         {children}
       </Container>
       <Coffee />
+      <ScrollToTop />
       <Footer />
     </>
   )
