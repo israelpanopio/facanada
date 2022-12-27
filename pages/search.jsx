@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DesktopAds, GoogleAds, InFeedAds, WidgetCard } from '../components';
+import { WidgetCard } from '../components';
 import Link from 'next/link'
 import { Body, Col, SidebarNav } from '../components/sharedstyles';
 import styled from 'styled-components'
@@ -43,7 +43,6 @@ const search = () => {
 
   return (<Body>
     <Col><Content>
-        <InFeedAds />
         <h2>What are you looking for?</h2>      
         <Form noValidate action="" role="search">
             <Input
@@ -69,7 +68,7 @@ const search = () => {
     </Content></Col>
     <Col>
     <SidebarNav>
-        <HideAds><DesktopAds /></HideAds>
+        <HideAds></HideAds>
         <Sidebar>
             <Comments>
             <div id="fb-root"></div>
@@ -80,7 +79,6 @@ const search = () => {
             {recentPosts.map((post, index ) => (
               <WidgetCard key={index} post={post} title={post.title} />
             ))}
-            <GoogleAds />
           </Items>
         </Sidebar>
     </SidebarNav>

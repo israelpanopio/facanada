@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, InFeedAds, DesktopSocial, DesktopAds, DesktopComments, GoogleAds } from '../components';
+import { WidgetCard, DesktopSocial, DesktopComments } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -26,7 +26,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    {/* {slug ? <HideAds><DesktopAds /></HideAds> : ''} */}
+    {/* {slug ? <HideAds>destopads</HideAds> : ''} */}
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
         <RelatedPosts openComments={openComments}>
@@ -40,9 +40,9 @@ const Widget = ({ categories, slug }) => {
                 src="//pl18141240.highcpmrevenuenetwork.com/8dbdc1a26dcd57378770c789e4d99f19/invoke.js">
               </Script>
               <div id="container-8dbdc1a26dcd57378770c789e4d99f19"></div> */}
-              {/* {slug ? <InFeedAds /> : ''} */}
+              {/* {slug ? infeedads : ''} */}
               </>))}
-             {/* {slug ? <GoogleAds /> : ''} */}
+             {/* {slug ? googleads : ''} */}
           </Items>
         </RelatedPosts>
       </Sidebar>
