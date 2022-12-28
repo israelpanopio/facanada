@@ -4,36 +4,16 @@ import styled from 'styled-components'
 import moment from 'moment';
 import { Author } from './sharedstyles';
 import { FaCalendarWeek, FaAngleRight } from 'react-icons/fa';
-import { BuyMeCoffee, GoogleAds } from '../components';
-import { FaBars } from 'react-icons/fa';
-import { Link } from 'react-scroll'
+import { BuyMeCoffee, GoogleAds, TableContents } from '../components';
 
 const PostDetail = ({ post }) => {
-  const [openTable, setOpenTable] = useState(false);
-
   return (
     <Post>
       <GoogleAds ads={"top"} />        
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
-      {post.tableOfContents ? <>
-      <TableIcon onClick={(() => setOpenTable(!openTable))}>
-         {openTable ? <h6 ><FaBars /> On this page</h6> : <p><br /><u><FaBars /> See table of contents</u></p>}
-      </TableIcon>
-        <TableOfContens openTable={openTable}>
-          <ul style={{margin:"0"}}>
-            <li><LinkS to="intro" smooth={true} duration={500} spy={true} exact='true' offset={-80}><h6 style={{margin:"0"}}>{post.title}</h6></LinkS></li>
-            <ul>
-              <li><LinkS to="one" smooth={true} duration={500} spy={true} exact='true' offset={-80}>{post.content1.raw.children[0].children[0].text}</LinkS></li>
-              <li><LinkS to="two" smooth={true} duration={500} spy={true} exact='true' offset={-80}>{post.content2.raw.children[0].children[0].text}</LinkS></li>
-              <li><LinkS to="three" smooth={true} duration={500} spy={true} exact='true' offset={-80}>{post.content3.raw.children[0].children[0].text}</LinkS></li>
-              <li><LinkS to="four" smooth={true} duration={500} spy={true} exact='true' offset={-80}>{post.content4.raw.children[0].children[0].text}</LinkS></li>
-              <li><LinkS to="five" smooth={true} duration={500} spy={true} exact='true' offset={-80}>{post.content5.raw.children[0].children[0].text}</LinkS></li>
-            </ul>
-          </ul>
-        </TableOfContens>
-        </> : ""}
+      {post.tableOfContents ? <TableContents post={post} /> : ""}
 
       <h1 id="intro">{post.title}</h1>
 
@@ -148,20 +128,4 @@ const MobileAds = styled.div`
   @media screen and (min-width: 900px) {
     display: none;
 }
-`
-
-const TableIcon = styled.div`
-    display: inline-block;
-    ${'' /* transform: translate(-100%, 25%); */}
-    cursor: pointer;
-    margin: 0;
-`
-
-const TableOfContens = styled.div`
-  display: ${({ openTable }) => (openTable ? 'block' : 'none')};
-  margin-top:0;
-`
-
-const LinkS = styled(Link)`
-  cursor: pointer;
 `

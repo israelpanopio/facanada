@@ -18,14 +18,14 @@ const MobileCoffee = styled.div`
     background-color: #ff813f;
     border: none;
     border-radius: 100px;
-    margin: auto 10px auto auto;
+    right: 18px;
     width: 60px;
     height: 60px;
-    position: sticky;
+    position: fixed;
     bottom: 15px;
     z-index: 10;
     justify-content: center;
-  box-shadow: 5px 5px 10px grey;
+    box-shadow: 5px 5px 10px grey;
 
   @media screen and (max-width: 900px) {
     width: 45px;

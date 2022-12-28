@@ -6,11 +6,6 @@ import { WidgetCard, DesktopSocial, DesktopComments } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
-  const [openComments, setOpenComments] = useState(true);
-
-  const toggleComments = () => {
-    setOpenComments(!openComments);
-  }
   
   useEffect(() => {
     if (slug && slug !== "pangarap-ko-talagang-makapag-canada") {
@@ -28,8 +23,8 @@ const Widget = ({ categories, slug }) => {
   return (<Div>
     {/* {slug ? <HideAds>destopads</HideAds> : ''} */}
       <Sidebar slug={slug} >
-      {slug ? <DesktopComments slug={slug} openComments={openComments} /> : ''}
-        <RelatedPosts openComments={openComments}>
+      <DesktopComments slug={slug} />
+        <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
           <Items slug={slug}>
             {relatedPosts.map((post, index ) => (<>
@@ -46,7 +41,7 @@ const Widget = ({ categories, slug }) => {
           </Items>
         </RelatedPosts>
       </Sidebar>
-    <DesktopSocial slug={slug} openComments={openComments} toggleComments={toggleComments} /></Div>
+  </Div>
   )
 }
 
@@ -61,7 +56,7 @@ const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
   ${'' /* height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)}; */}
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   overflow-y: auto;
   overflow-x: hidden;
 

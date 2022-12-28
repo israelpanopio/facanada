@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Script from "next/script";
+import { Link } from 'react-scroll'
 
-const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {  
+const MobileSocial = ({ slug }) => {  
   const [commentLink, setCommentLink] = useState();
 
   useEffect(() => {
@@ -22,8 +23,11 @@ const MobileSocial = ({ slug, toggleMobileComments, openMobileComments }) => {
         />
         <SocialDiv>
           <Content>
-            <div className="fb-like" data-href={`https://www.ph2canada.com/${commentLink}`} data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-            <FButton onClick={toggleMobileComments}>{openMobileComments ? 'Close Comments' : 'See Comments'}</FButton>
+            <div 
+              className="fb-like" data-action="like" data-size="large"
+              data-href={`https://www.ph2canada.com/${commentLink}`} 
+              data-width="" data-layout="button_count"  data-share="true"></div>
+            <FButton><LinkS  to="comments" exact='true' offset={-60}>Comments</LinkS></FButton>
           </Content>
         </SocialDiv>
       </>
@@ -39,6 +43,7 @@ const SocialDiv = styled.div`
   bottom: 0;
   margin-bottom: 0;
   padding-bottom: 20px;
+  padding-top: 3px;
   z-index: 10;
 
   @media screen and (max-width: 900px) {
@@ -69,4 +74,11 @@ const FButton = styled.button`
   @media screen and (min-width: 900px) {
   display: none;
 }
+`
+const LinkS = styled(Link)`
+  text-decoration: none;
+  
+  &:hover {
+      color: white;
+    }
 `

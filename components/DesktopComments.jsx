@@ -1,7 +1,8 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useEffect, useState, useRef }  from 'react'
 import styled from 'styled-components'
 
-const DesktopComments = ({ slug, openComments }) => {  
+
+const DesktopComments = ({ slug }) => {  
   const [commentLink, setCommentLink] = useState();
 
   useEffect(() => {
@@ -13,7 +14,7 @@ const DesktopComments = ({ slug, openComments }) => {
   })
   
   return (
-    <Comments id="comments" openComments={openComments} >
+    <Comments id="comments">
       <div id="fb-root"></div>
       <div className="fb-comments" data-href={`https://www.ph2canada.com/${commentLink}`} data-width="100%" data-numposts="2"></div>
     </Comments>
@@ -23,7 +24,4 @@ const DesktopComments = ({ slug, openComments }) => {
 export default DesktopComments
 
 const Comments = styled.div`
-  bottom: 0;
-  opacity: ${({ openComments }) => (openComments ? '100%' : '0')};
-  display:  ${({ openComments }) => (openComments ? 'block' : 'none')};
 `

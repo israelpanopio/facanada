@@ -4,16 +4,9 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import { Body, Col, SidebarNav } from '../../components/sharedstyles';
 import { MobileSocial, PostDetail, Widget } from '../../components';
-import { animateScroll as scroll } from 'react-scroll'
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
-  const [openMobileComments, setOpenMobileComments] = useState(false);
-
-  const toggleMobileComments = () => {
-    setOpenMobileComments(!openMobileComments)
-    scroll.scrollToTop();
-  }
 
 if (router.isFallback) {
   return (
@@ -26,10 +19,6 @@ if (router.isFallback) {
 return (<>
     <Body>
       <Col>
-        <Comments openMobileComments={openMobileComments}>
-          <div id="fb-root"></div>
-          <div className="fb-comments" data-href={`https://www.ph2canada.com/post/${post.slug}`} data-width="100%" data-numposts="1"></div>
-        </Comments>
         <PostDetail post={post} />
       </Col>
       <Col>
@@ -37,7 +26,7 @@ return (<>
           <Widget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
         </SidebarNav>
       </Col>
-      <MobileSocial slug={post.slug} toggleMobileComments={toggleMobileComments} openMobileComments={openMobileComments} />
+      <MobileSocial slug={post.slug} />
     </Body>
     </>
   )
