@@ -36,7 +36,7 @@ const ScrollTop = styled.div`
     position: fixed;
     bottom: 40px;
     right: 50%;
-    z-index: 20;
+    z-index: 9;
     border-radius: 50%;
     height: 60px;
     width: 60px;
@@ -44,15 +44,16 @@ const ScrollTop = styled.div`
     cursor: pointer;
     font-size: 40px;
     overflow-wrap: break-word;
+    background: white;
     
     @media  screen and (max-width: 1200px) {
-        right: 42%;
-        bottom: 45px;
+        right: 10px;
+        bottom: 50px;
+        border-radius: 50% 50% 0 0;
     }
 
     &:hover {
     animation: none;
-    background: #fff;
     color: #551B54;
     box-shadow: 5px 5px 10px grey;
     margin-top: -2px;
