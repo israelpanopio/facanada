@@ -99,5 +99,9 @@ export const SidebarNav = styled.nav`
     position: sticky;
     top: 80px;
     z-index: 5;
+    background: transparent;
+    
 `
+
+
 

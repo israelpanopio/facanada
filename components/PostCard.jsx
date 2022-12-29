@@ -29,14 +29,14 @@ const Title = styled.h2`
 export const PostCardItem = styled.div`
   display: grid;
   margin: 7px auto 15px auto;
-  width: 95%;
   cursor: pointer;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px 10px 5px 10px;
 
   &:hover{
-  background-color: #ffc4bc;
+  box-shadow: 15px 15px 50px grey;
   padding: 10px;
+  color: black;
 }
 
 @media screen and (max-width: 900px) {

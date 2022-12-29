@@ -7,7 +7,6 @@ import styled from 'styled-components'
 
 const TableContents = ({post}) => {
     const [openTable, setOpenTable] = useState(false);
-    console.log(post.content4);
 
   return (<>
     <TableIcon onClick={(() => setOpenTable(!openTable))}>

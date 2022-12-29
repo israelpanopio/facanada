@@ -3,7 +3,6 @@ import moment from 'moment';
 import styled from 'styled-components'
 import { FaCalendarWeek } from 'react-icons/fa';
 import { Author } from './sharedstyles';
-import { PostCardItem } from './PostCard';
 
 const WidgetCard = ({ post }) => {
   return (<PostCardItem>
@@ -19,6 +18,21 @@ const WidgetCard = ({ post }) => {
 }
 
 export default WidgetCard
+
+const PostCardItem = styled.div`
+  display: grid;
+  margin: 7px auto 15px auto;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 15px 10px 5px 10px;
+  width: 85%;
+
+  &:hover{
+  box-shadow: 6px 6px 10px grey;
+  padding: 10px;
+  color: black;
+}
+`
 
 const Title = styled.div`
   margin: auto;
@@ -38,4 +52,7 @@ const ImagePreview = styled.a`
   background-position: center;
   margin: 0px;
   border-radius: 10px;
+  
+  &:hover{
+  color: inherit;}
 `

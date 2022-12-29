@@ -26,7 +26,6 @@ const Widget = ({ categories, slug }) => {
       <DesktopComments slug={slug} />
         <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
-          <Items slug={slug}>
             {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
               {/* <Script 
@@ -38,7 +37,6 @@ const Widget = ({ categories, slug }) => {
               {/* {slug ? infeedads : ''} */}
               </>))}
              {/* {slug ? googleads : ''} */}
-          </Items>
         </RelatedPosts>
       </Sidebar>
   </Div>
@@ -61,14 +59,22 @@ const Sidebar = styled.nav`
   overflow-x: hidden;
 
   @media screen and (max-width: 900px) {
-  overflow: visible;
-  height: auto;
+    overflow: visible;
+    height: auto;
   }
-`
-
-const Items = styled.div`
-      overflow: visible;
-}
+  
+  &::-webkit-scrollbar {
+      width: 6px;               /* width of the entire scrollbar */
+    }
+    
+  &::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+  }
+    
+  &::-webkit-scrollbar-thumb {
+    background-color: #d4d4d4;
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
 `
 
 const RelatedPosts = styled.div`

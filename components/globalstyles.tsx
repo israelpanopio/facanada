@@ -122,6 +122,7 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: 2px;
     }
   }
+
 `
 
 export default GlobalStyle
