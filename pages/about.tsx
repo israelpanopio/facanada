@@ -36,14 +36,13 @@ function Comments() {
 
 const AboutUs = () => {
   return (<>
-  <p>We started as small <Link href="https://www.facebook.com/groups/cadreamers/">facebook group</Link> and as our group grow larger, it becomes difficult to manage, specially when 
+  <p>We started as small <Link href="https://www.facebook.com/groups/cadreamers/">facebook group</Link> and as our group grow bigger, it becomes difficult to manage, specially when 
   the most common questions are asked over and over again. So we created this website to organize the topics discussed in our group. In this way, Filipino Aspirants can reffer to them with ease.</p>
     <p>Interested in joining our Group?</p>
-    <p>Please take the time to read our rules. Click on the link at the bottom to request to join</p>
-    <p><i>Have a great day everyone!!</i></p>
-    <p><i>We're hoping for the best for you and to see you in Canada.</i></p>
+    <p><u><Link href="https://www.facebook.com/groups/cadreamers/">Join Filipino Aspirants to Canada</Link></u></p>
     <p></p>
-    <p><Link href="https://www.facebook.com/groups/cadreamers/">CLICK HERE TO JOIN THE GROUP</Link></p>
-    <p></p>
+    <p>Please take the time to read our rules.</p>
+    <p>Have a great day everyone!!!</p>
+    <p>We're hoping for the best for you and to see you in Canada.</p>
 </>)}
 

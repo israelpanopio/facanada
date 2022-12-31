@@ -23,7 +23,7 @@ const Widget = ({ categories, slug }) => {
   return (<Div>
     {/* {slug ? <HideAds>destopads</HideAds> : ''} */}
       <Sidebar slug={slug} >
-      <DesktopComments slug={slug} />
+      {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
             {relatedPosts.map((post, index ) => (<>
