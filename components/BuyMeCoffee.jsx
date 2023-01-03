@@ -25,11 +25,12 @@ color: black;
 font-family: Cookie,sans-serif;
 font-size: 25px;
 box-sizing: border-box;
+margin-bottom: 10px;
 
 &:hover {
   color: black;
   box-shadow: 5px 5px 10px grey;
   margin-top: -2px;
-  margin-bottom: 2px;
+  margin-bottom: 12px;
 }
 `

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Body, Col, SidebarNav } from '../../components/sharedstyles'
-import { Widget } from '../../components';
+import { Body, Col, SidebarNav } from '../components/sharedstyles'
+import { Widget } from '../components';
 import { FaCanadianMapleLeaf } from 'react-icons/fa';
 
 const Faqs = () => {
@@ -16,22 +16,22 @@ const Faqs = () => {
         <ul>
           {/* <li>Visit / Tourist</li>
             <ul>
-              <li><a href="/faqs/visit-tour">See Frequently Asked Questions</a></li>
+              <li><a href="/post/visit-tour">See Frequently Asked Questions</a></li>
               <li><a href={`/discussion/visit?page=1`}>Sea List of all the discussed Topics</a></li>
             </ul>
           <li>Student</li>
             <ul>
-              <li><a href="/faqs/student-permit">See Frequently Asked Questions</a></li>
+              <li><a href="/post/student-permit">See Frequently Asked Questions</a></li>
               <li><a href={`/discussion/study?page=1`}>Sea List of all the discussed Topics</a></li>
             </ul> */}
           <li>Work</li>
             <ul>
-              <li><a href="/faqs/work-permit">See Frequently Asked Questions</a></li>
+              <li><a href="/post/work-permit">See Frequently Asked Questions</a></li>
               <li><a href={`/discussion/work?page=1`}>Sea List of all the discussed Topics</a></li>
             </ul>
           {/* <li>Permanent Residence</li>
             <ul>
-              <li><a href="/faqs/permanent-residence">See Frequently Asked Questions</a></li>
+              <li><a href="/post/permanent-residence">See Frequently Asked Questions</a></li>
               <li><a href={`/discussion/permanent-residence?page=1`}>Sea List of all the discussed Topics</a></li>
             </ul> */}
         </ul>

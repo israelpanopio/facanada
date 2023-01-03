@@ -40,8 +40,7 @@ export const getSimilarPosts = async (categories, slug) => {
         query GetPostDetails($slug: String!, $categories: [String!]) {
             posts(
                 where: {
-                    slug_not: $slug, 
-                    slug_not_contains: "faqs/"
+                    slug_not: $slug
                     AND: {
                         categories_some: { slug_in: $categories}}}
                 orderBy: publishedAt_DESC
@@ -66,8 +65,7 @@ export const getRecentPosts = async () => {
         query GetPostDetails(){
             posts(
                 orderBy: publishedAt_DESC
-                first: 6, 
-                where: {slug_not_contains: "faqs/"}
+                first: 6
             ) {
                 title
                 featuredImage {
@@ -246,47 +244,6 @@ export const getPostDetails = async (slug) => {
     return result.post;
 };
 
-export const getFaqsDetails = async (slug) => {
-    const query = gql`
-        query GetFaqsDetails($slug: String!) {
-            post(where: { slug: $slug } ) {
-                publishedAt
-                categories {
-                    id
-                    slug
-                    name
-                }
-                slug
-                title
-                featuredImage {
-                    url
-                }
-                content {
-                    raw
-                    markdown
-                }
-                content2 {
-                    raw
-                    markdown
-                }
-                content3 {
-                    raw
-                    markdown
-                }
-                content4 {
-                    raw
-                    markdown
-                }
-            }            
-        }
-      
-    `
-
-    const result = await request(graphqlAPI, query, { slug });
-
-    return result.post;
-};
-
 export const getPosts = async () => {
     const query = gql`
         query MyQuery {
@@ -303,20 +260,6 @@ export const getPosts = async () => {
     const result = await request(graphqlAPI, query);
 
     return result.postsConnection.edges
-};
-
-export const getFaqs = async () => {
-    const query = gql`
-        query MyQuery {
-            posts(where: {slug_contains: "faqs/"}) {
-            slug
-            }
-        }      
-      
-    `
-    const result = await request(graphqlAPI, query);
-
-    return result.posts;
 };
 
 export const getSearchPosts = async (searchKeyword) => {
