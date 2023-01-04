@@ -27,7 +27,7 @@ const MobileSocial = ({ slug }) => {
               className="fb-like" data-action="like" data-size="large"
               data-href={`https://www.ph2canada.com/${commentLink}`} 
               data-width="" data-layout="button_count"  data-share="true"></div>
-            <FButton><LinkS  to="comments" exact='true' offset={-60}>Comments</LinkS></FButton>
+            <FButton><LinkS  to="comments" smooth={true} duration={500} spy={true} exact='true' offset={-60}>Comments</LinkS></FButton>
           </Content>
         </SocialDiv>
       </>

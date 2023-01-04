@@ -46,10 +46,20 @@ const ScrollTop = styled.div`
     overflow-wrap: break-word;
     background: white;
     
-    @media  screen and (max-width: 1200px) {
+    @media  screen and (max-width: 900px) {
         right: 10px;
-        bottom: 50px;
-        border-radius: 50% 50% 0 0;
+        bottom: 10px;
+        padding-bottom: 40px;
+        border-radius: 30px;
+
+        
+            &:hover {
+            animation: none;
+            color: #551B54;
+            bottom: 60px;
+            padding-bottom: 0;
+            border-radius: 50%;
+            }
     }
 
     &:hover {
