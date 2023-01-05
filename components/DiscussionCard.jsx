@@ -7,7 +7,7 @@ import { AuthorDiv } from './sharedstyles';
 const DiscussionCard = ({ post }) => {
 
   return (<a href={`/post/${post.slug}`} style={{textDecoration:"none"}}>
-  <PostCardItem>
+  <DiscussionCardItem>
     <ImagePreview
       style={{backgroundImage: `url('${post.featuredImage.url}')`}}>
       <AuthorDiv><Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></AuthorDiv>
@@ -15,7 +15,7 @@ const DiscussionCard = ({ post }) => {
     <Title>{post.title}</Title>
     <Excerpt> {(post.content.markdown).slice(0, 150)}...</Excerpt></div>
     {/* <MobileExcerpt>{(post.content.markdown).slice(0, 160)}...</MobileExcerpt> */}
-  </PostCardItem></a>)
+  </DiscussionCardItem></a>)
 }
 
 export default DiscussionCard
@@ -46,7 +46,7 @@ float:right;
 }
 `
 
-export const PostCardItem = styled.div`
+export const DiscussionCardItem = styled.div`
   display: grid;
   grid-template-columns: 200px 1fr;
   margin: 7px auto 15px auto;
