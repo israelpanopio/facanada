@@ -4,10 +4,8 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 const SitemapGenerator = ({ posts }) => {
-  console.log(posts);
   return (
     <div>
-    <h2>This is a sitemap Generator</h2>
         {posts.map((post, index) => (<div>
             <Pa>{`<url>`}</Pa>
             <Pa>{`<loc>ph2canada.com/post/${post.node.slug}</loc>`}</Pa>
