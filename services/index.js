@@ -289,3 +289,22 @@ export const getSearchPosts = async (searchKeyword) => {
 
     return result.posts;
 };
+
+export const getSlug= async () => {
+    const query = gql`
+        query getSlug {
+            postsConnection(orderBy: publishedAt_DESC, first: 999, stage: PUBLISHED) {
+            edges {
+                node {
+                slug
+                updatedAt
+                }
+            }
+            }
+        }
+      
+    `
+    const result = await request(graphqlAPI, query);
+
+    return result.postsConnection;
+};
