@@ -9,7 +9,7 @@ import { BuyMeCoffee, GoogleAds, TableContents } from '../components';
 const PostDetail = ({ post }) => {
   return (
     <Post>
-      <GoogleAds ads={"top"} />        
+      {post.ads ? <GoogleAds ads={"top"} /> : ''}
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
@@ -75,7 +75,7 @@ const PostDetail = ({ post }) => {
         : ''}
         <p /><br />
 
-      <GoogleAds />
+        {post.ads ? <GoogleAds /> : ''}
     </Post>
   )
 }
