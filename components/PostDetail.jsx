@@ -42,7 +42,7 @@ const PostDetail = ({ post }) => {
           </> : ''}
 
         {post.content3 ? <div id="three">
-            {post.ads && post.ad2 ? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad2 ? <GoogleAds /> : ''}
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
@@ -60,7 +60,7 @@ const PostDetail = ({ post }) => {
           </> : ''}        
 
         {post.content5 ? <div id="five">
-            {post.ads && post.ad4 ? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad4 ? <GoogleAds ads={"top"} /> : ''}
           <RichText content={post.content5.raw.children} />
           </div> : ''}
         {post.content5b ? <>

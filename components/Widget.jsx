@@ -26,15 +26,18 @@ const Widget = ({ categories, slug }) => {
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
-            {relatedPosts.map((post, index ) => (<>
+            {relatedPosts.slice(0, 2).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-              {/* <Script 
-                async="async" 
-                data-cfasync="false" 
-                src="//pl18141240.highcpmrevenuenetwork.com/8dbdc1a26dcd57378770c789e4d99f19/invoke.js">
-              </Script>
-              <div id="container-8dbdc1a26dcd57378770c789e4d99f19"></div> */}
-              {/* <GoogleAds ads={"infeed"} /> */}
+              </>))}
+              <GoogleAds ads={"infeed"} />
+              
+            {relatedPosts.slice(2, 4).map((post, index ) => (<>
+              <WidgetCard key={index} post={post} title={post.title} />
+              </>))}
+              <GoogleAds ads={"infeed"} />
+
+              {relatedPosts.slice(4, 6).map((post, index ) => (<>
+              <WidgetCard key={index} post={post} title={post.title} />
               </>))}
               <GoogleAds />
         </RelatedPosts>
