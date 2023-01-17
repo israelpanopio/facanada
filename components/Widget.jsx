@@ -34,7 +34,7 @@ const Widget = ({ categories, slug }) => {
             {relatedPosts.slice(2, 4).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
               </>))}
-              <GoogleAds ads={"infeed"} />
+              {!slug ? <GoogleAds ads={"infeed"} /> : ''}
 
               {relatedPosts.slice(4, 6).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
