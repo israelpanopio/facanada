@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services'
-import { WidgetCard, DesktopSocial, DesktopComments } from '../components';
+import { WidgetCard, DesktopSocial, DesktopComments, GoogleAds } from '../components';
 
 const Widget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
@@ -21,7 +21,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    {/* {slug ? <HideAds>destopads</HideAds> : ''} */}
+    {slug ? <GoogleAds ads={"top"} /> : ''}
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
@@ -34,9 +34,9 @@ const Widget = ({ categories, slug }) => {
                 src="//pl18141240.highcpmrevenuenetwork.com/8dbdc1a26dcd57378770c789e4d99f19/invoke.js">
               </Script>
               <div id="container-8dbdc1a26dcd57378770c789e4d99f19"></div> */}
-              {/* {slug ? infeedads : ''} */}
+              {/* <GoogleAds ads={"infeed"} /> */}
               </>))}
-             {/* {slug ? googleads : ''} */}
+              <GoogleAds />
         </RelatedPosts>
       </Sidebar>
   </Div>
@@ -53,8 +53,7 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  ${'' /* height: ${({ slug }) => (slug ? '70vh' : `calc(100vh - 60px)`)}; */}
-  height: calc(100vh - 80px);
+  height: ${({ slug }) => (slug ? 'calc(100vh - 80px - 15vh)' : `calc(100vh - 80px)`)};
   overflow-y: auto;
   overflow-x: hidden;
 
