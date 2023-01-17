@@ -21,7 +21,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    {slug ? <GoogleAds ads={"top"} /> : ''}
+    <HideAds>{slug ? <GoogleAds ads={"top"} /> : ''}</HideAds>
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
