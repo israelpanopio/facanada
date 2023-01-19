@@ -9,7 +9,7 @@ import { BuyMeCoffee, GoogleAds, TableContents } from '../components';
 const PostDetail = ({ post }) => {
   return (
     <Post>
-      <DesktopAds><GoogleAds /></DesktopAds>
+      <DesktopAds><GoogleAds ads={"top"} /></DesktopAds>
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
@@ -28,7 +28,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
-            {post.ads && post.ad1 ? <MobileAds><GoogleAds ads={"top"} /></MobileAds> : ''}
+            {post.ads && post.ad1 ? <MobileAds><GoogleAds ads={"article"} /></MobileAds> : ''}
           <RichText content={post.content1b.raw.children} />
           </> : ''}
 
@@ -60,7 +60,7 @@ const PostDetail = ({ post }) => {
           </> : ''}        
 
         {post.content5 ? <div id="five">
-            {post.ads && post.ad4 ? <GoogleAds ads={"top"} /> : ''}
+            {post.ads && post.ad4 ? <GoogleAds ads={"infeed"} /> : ''}
           <RichText content={post.content5.raw.children} />
           </div> : ''}
         {post.content5b ? <>

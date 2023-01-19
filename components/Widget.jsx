@@ -18,8 +18,7 @@ const Widget = ({ categories, slug }) => {
       });
     }
   }, [slug]);
-
-
+    
   return (<Div>
     <HideAds>{slug ? <GoogleAds ads={"top"} /> : ''}</HideAds>
       <Sidebar slug={slug} >
@@ -56,7 +55,7 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  height: ${({ slug }) => (slug ? 'calc(100vh - 80px - 15vh)' : `calc(100vh - 80px)`)};
+  height: ${({ slug }) => (slug ?  'calc(100vh - 80px - 15vh)' : `calc(100vh - 80px)`)};
   overflow-y: auto;
   overflow-x: hidden;
 

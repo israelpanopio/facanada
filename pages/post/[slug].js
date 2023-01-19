@@ -19,6 +19,7 @@ if (router.isFallback) {
 return (<>
     <Body>
       <Col>
+        <MobileDiv />
         <PostDetail post={post} />
       </Col>
       <Col>
@@ -70,4 +71,13 @@ const Comments = styled.div`
   @media screen and (min-width: 900px) {
   display: none;
 }
+`
+
+const MobileDiv = styled.div`
+  height: 10px;
+  display: block;
+
+  
+  @media screen and (min-width: 900px) {
+    display: none;
 `

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 const ScrollToTop = () => {
     const [showTopBtn, setShowTopBtn] = useState(false);
+    
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 400) {
