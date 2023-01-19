@@ -26,10 +26,10 @@ const Widget = ({ categories, slug }) => {
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
-            {relatedPosts.slice(0, 2).map((post, index ) => (<>
+            {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
               </>))}
-              <GoogleAds ads={"infeed"} />
+              {/* <GoogleAds ads={"infeed"} />
               
             {relatedPosts.slice(2, 4).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
@@ -38,7 +38,7 @@ const Widget = ({ categories, slug }) => {
 
               {relatedPosts.slice(4, 6).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-              </>))}
+              </>))} */}
               <GoogleAds ads={"items"} />
         </RelatedPosts>
       </Sidebar>

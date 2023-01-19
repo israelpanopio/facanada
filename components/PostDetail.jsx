@@ -19,7 +19,7 @@ const PostDetail = ({ post }) => {
 
         <div><RichText content={post.content.raw} /></div>
         {post.contentb ? <>
-            {post.ads && post.ad0 ? <MobileAds><GoogleAds /></MobileAds> : ''}
+            {post.ads && post.ad0 ? <MobileAds><GoogleAds ads={"article"} /> </MobileAds> : ''}
           <RichText content={post.contentb.raw.children} />
         </> : ''}
 
