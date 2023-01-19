@@ -24,16 +24,16 @@ const PostDetail = ({ post }) => {
         </> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0? <GoogleAds ads={"article"} /> : ''}
+            {post.ads && post.ad0? <GoogleAds ads={"infeed"} /> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
-            {post.ads && post.ad1 ? <MobileAds><GoogleAds ads={"article"} /></MobileAds> : ''}
+            {post.ads && post.ad1 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
           <RichText content={post.content1b.raw.children} />
           </> : ''}
 
         {post.content2 ? <div id="two">
-            {post.ads && post.ad1 ? <GoogleAds /> : ''}
+            {post.ads && post.ad1 ? <GoogleAds ads={"article"} /> : ''}
           <RichText content={post.content2.raw.children} />
           </div> : ''}
         {post.content2b ? <>
@@ -46,12 +46,12 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
-            {post.ads && post.ad3 ? <MobileAds><GoogleAds ads={"top"} /></MobileAds> : ''}
+            {post.ads && post.ad3 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
           <RichText content={post.content3b.raw.children} />
           </> : ''}
 
         {post.content4 ? <div id="four">
-            {post.ads && post.ad3 ? <GoogleAds /> : ''}
+            {post.ads && post.ad3 ? <GoogleAds ads={"article"} /> : ''}
           <RichText content={post.content4.raw.children} />
           </div> : ''}
         {post.content4b ? <>

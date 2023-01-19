@@ -30,7 +30,16 @@ const GoogleAds = ({ads}) => {
           data-ad-layout="in-article"
           data-ad-format="fluid"
           data-ad-client="ca-pub-4841621324421656"
-          data-ad-slot="4122468441">
+          data-ad-slot="8361661008">
+      </ins>
+    )
+  } else if (ads == "items") {  
+    return (
+      <ins className="adsbygoogle"
+          style={{display:"block", textAlign:"center"}}
+          data-ad-format="autorelaxed"
+          data-ad-client="ca-pub-4841621324421656"
+          data-ad-slot="9483170983">
       </ins>
     )
   } else {  
@@ -40,7 +49,7 @@ const GoogleAds = ({ads}) => {
         data-ad-format="fluid"
         data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-4841621324421656"
-        data-ad-slot="9728165333">
+        data-ad-slot="4565886222">
     </ins>
   )
 }
