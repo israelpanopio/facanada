@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import styled from 'styled-components'
 import moment from 'moment';
@@ -9,7 +9,7 @@ import { BuyMeCoffee, GoogleAds, TableContents } from '../components';
 const PostDetail = ({ post }) => {
   return (
     <Post>
-      <GoogleAds ads={"top"} />
+      <DesktopAds><GoogleAds /></DesktopAds>
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
@@ -19,12 +19,12 @@ const PostDetail = ({ post }) => {
 
         <div><RichText content={post.content.raw} /></div>
         {post.contentb ? <>
-            {post.ads && post.ad0 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad0 ? <MobileAds><GoogleAds /></MobileAds> : ''}
           <RichText content={post.contentb.raw.children} />
         </> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad0? <GoogleAds ads={"article"} /> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
@@ -33,7 +33,7 @@ const PostDetail = ({ post }) => {
           </> : ''}
 
         {post.content2 ? <div id="two">
-            {post.ads && post.ad1 ? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad1 ? <GoogleAds /> : ''}
           <RichText content={post.content2.raw.children} />
           </div> : ''}
         {post.content2b ? <>
@@ -42,7 +42,7 @@ const PostDetail = ({ post }) => {
           </> : ''}
 
         {post.content3 ? <div id="three">
-            {post.ads && post.ad2 ? <GoogleAds /> : ''}
+            {post.ads && post.ad2 ? <GoogleAds ads={"top"} /> : ''}
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
@@ -51,7 +51,7 @@ const PostDetail = ({ post }) => {
           </> : ''}
 
         {post.content4 ? <div id="four">
-            {post.ads && post.ad3 ? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad3 ? <GoogleAds /> : ''}
           <RichText content={post.content4.raw.children} />
           </div> : ''}
         {post.content4b ? <>
@@ -126,6 +126,12 @@ const PageLink = styled.a`
 const MobileAds = styled.div`
   
   @media screen and (min-width: 900px) {
+    display: none;
+}
+`
+
+const DesktopAds = styled.div`
+    @media screen and (max-width: 900px) {
     display: none;
 }
 `

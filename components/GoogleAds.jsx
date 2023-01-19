@@ -23,6 +23,16 @@ const GoogleAds = ({ads}) => {
       </ins>
     </>
     )
+  } else if (ads == "article") {  
+    return (
+      <ins className="adsbygoogle"
+          style={{display:"block", textAlign:"center"}}
+          data-ad-layout="in-article"
+          data-ad-format="fluid"
+          data-ad-client="ca-pub-4841621324421656"
+          data-ad-slot="4122468441">
+      </ins>
+    )
   } else {  
   return (
     <ins className="adsbygoogle"
@@ -30,7 +40,7 @@ const GoogleAds = ({ads}) => {
         data-ad-format="fluid"
         data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-4841621324421656"
-        data-ad-slot="6509252855">
+        data-ad-slot="9728165333">
     </ins>
   )
 }
