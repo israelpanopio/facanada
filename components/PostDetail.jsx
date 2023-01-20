@@ -28,7 +28,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
-            {post.ads && post.ad1 ? <div id="ezoic-pub-ad-placeholder-110"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad1 ? <MobileAds><div id="ezoic-pub-ad-placeholder-110"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content1b.raw.children} />
           </> : ''}
 
@@ -37,7 +37,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content2.raw.children} />
           </div> : ''}
         {post.content2b ? <>
-            {post.ads && post.ad2 ? <div id="ezoic-pub-ad-placeholder-112"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad2 ? <MobileAds><div id="ezoic-pub-ad-placeholder-112"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content2b.raw.children} />
           </> : ''}
 
@@ -46,7 +46,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
-            {post.ads && post.ad3 ? <div id="ezoic-pub-ad-placeholder-114"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad3 ? <MobileAds><div id="ezoic-pub-ad-placeholder-114"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content3b.raw.children} />
           </> : ''}
 
@@ -55,7 +55,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content4.raw.children} />
           </div> : ''}
         {post.content4b ? <>
-            {post.ads && post.ad4 ? <div id="ezoic-pub-ad-placeholder-116"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad4 ? <MobileAds><div id="ezoic-pub-ad-placeholder-116"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content4b.raw.children} />
           </> : ''}        
 
@@ -64,7 +64,7 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content5.raw.children} />
           </div> : ''}
         {post.content5b ? <>
-            {post.ads && post.ad5 ? <div id="ezoic-pub-ad-placeholder-118"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad5 ? <MobileAds><div id="ezoic-pub-ad-placeholder-118"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content5b.raw.children} />
           </> : ''}
 
