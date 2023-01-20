@@ -22,6 +22,21 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-31HF0Y6JYY"/>
+      <Script
+        id='google-analytics'
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-31HF0Y6JYY', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       <Script
         id="Adsense-id"
         data-ad-client="ca-pub-4841621324421656"

@@ -79,5 +79,5 @@ const MobileDiv = styled.div`
 
   
   @media screen and (min-width: 900px) {
-    display: none;
+  height: 5px;
 `
