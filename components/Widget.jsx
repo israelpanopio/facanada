@@ -21,7 +21,7 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    <HideAds>{slug ? <GoogleAds ads={"top"} /> : ''}</HideAds>
+    {/* <HideAds>{slug ? <GoogleAds ads={"top"} /> : ''}</HideAds> */}
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
@@ -39,7 +39,7 @@ const Widget = ({ categories, slug }) => {
               {relatedPosts.slice(4, 6).map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
               </>))} */}
-              <GoogleAds ads={"items"} />
+              {/* <GoogleAds ads={"items"} /> */}
         </RelatedPosts>
       </Sidebar>
   </Div>
