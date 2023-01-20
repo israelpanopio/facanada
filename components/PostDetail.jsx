@@ -9,7 +9,7 @@ import { BuyMeCoffee, GoogleAds, TableContents } from '../components';
 const PostDetail = ({ post }) => {
   return (
     <Post>
-      <DesktopAds><GoogleAds ads={"top"} /></DesktopAds>
+      <DesktopAds><div id="ezoic-pub-ad-placeholder-106"><GoogleAds ads={"top"} /></div></DesktopAds>
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
@@ -19,52 +19,52 @@ const PostDetail = ({ post }) => {
 
         <div><RichText content={post.content.raw} /></div>
         {post.contentb ? <>
-            {post.ads ? <MobileAds><GoogleAds ads={"article"} /> </MobileAds> : ''}
+            {post.ads ? <MobileAds><div id="ezoic-pub-ad-placeholder-108"><GoogleAds ads={"article"} /></div></MobileAds> : ''}
           <RichText content={post.contentb.raw.children} />
         </> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad0? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
-            {post.ads && post.ad1 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad1 ? <div id="ezoic-pub-ad-placeholder-110"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content1b.raw.children} />
           </> : ''}
 
         {post.content2 ? <div id="two">
-            {post.ads && post.ad1 ? <GoogleAds ads={"article"} /> : ''}
+            {post.ads && post.ad1 ? <div id="ezoic-pub-ad-placeholder-111"><GoogleAds ads={"article"} /></div> : ''}
           <RichText content={post.content2.raw.children} />
           </div> : ''}
         {post.content2b ? <>
-            {post.ads && post.ad2 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad2 ? <div id="ezoic-pub-ad-placeholder-112"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content2b.raw.children} />
           </> : ''}
 
         {post.content3 ? <div id="three">
-            {post.ads && post.ad2 ? <GoogleAds ads={"top"} /> : ''}
+            {post.ads && post.ad2 ? <div id="ezoic-pub-ad-placeholder-113"><GoogleAds ads={"top"} /></div> : ''}
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
-            {post.ads && post.ad3 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad3 ? <div id="ezoic-pub-ad-placeholder-114"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content3b.raw.children} />
           </> : ''}
 
         {post.content4 ? <div id="four">
-            {post.ads && post.ad3 ? <GoogleAds ads={"article"} /> : ''}
+            {post.ads && post.ad3 ? <div id="ezoic-pub-ad-placeholder-115"><GoogleAds ads={"article"} /></div> : ''}
           <RichText content={post.content4.raw.children} />
           </div> : ''}
         {post.content4b ? <>
-            {post.ads && post.ad4 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad4 ? <div id="ezoic-pub-ad-placeholder-116"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content4b.raw.children} />
           </> : ''}        
 
         {post.content5 ? <div id="five">
-            {post.ads && post.ad4 ? <GoogleAds ads={"infeed"} /> : ''}
+            {post.ads && post.ad4 ? <div id="ezoic-pub-ad-placeholder-117"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content5.raw.children} />
           </div> : ''}
         {post.content5b ? <>
-            {post.ads && post.ad5 ? <MobileAds><GoogleAds ads={"infeed"} /></MobileAds> : ''}
+            {post.ads && post.ad5 ? <div id="ezoic-pub-ad-placeholder-118"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content5b.raw.children} />
           </> : ''}
 
@@ -75,7 +75,7 @@ const PostDetail = ({ post }) => {
         : ''}
         <p /><br />
 
-        <GoogleAds />
+        <div id="ezoic-pub-ad-placeholder-119"><GoogleAds /></div>
     </Post>
   )
 }

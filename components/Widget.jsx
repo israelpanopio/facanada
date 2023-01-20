@@ -21,15 +21,21 @@ const Widget = ({ categories, slug }) => {
 
 
   return (<Div>
-    <HideAds>{slug ? <GoogleAds ads={"top"} /> : ''}</HideAds>
+    <HideAds>
+      {slug ? 
+        <div id="ezoic-pub-ad-placeholder-122">
+          <GoogleAds ads={"top"} /> 
+        </div>
+      : ''}
+    </HideAds>
       <Sidebar slug={slug} >
       {slug ? <DesktopComments slug={slug} /> : ''}
         <RelatedPosts>
           <h2>{slug ? 'Related Posts' : 'Recent Posts'}</h2>
             {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
-              </>))}
-              <GoogleAds ads={"items"} />
+            </>))}
+          <div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div>
         </RelatedPosts>
       </Sidebar>
   </Div>
