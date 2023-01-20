@@ -52,7 +52,7 @@ export const Nav = styled.nav`
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 15;
+    z-index: 100;
     border-bottom: 3px solid black;
     margin: -20px 0 0 0;
     padding-top: 10px;
