@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import { Body, Col, SidebarNav } from '../../components/sharedstyles';
 import { MobileSocial, PostDetail, Widget } from '../../components';
+import Head from 'next/head'
+import Script from "next/script";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();
@@ -17,6 +19,9 @@ if (router.isFallback) {
 } 
 
 return (<>
+  <Head>
+    <title>{post.title}</title>
+  </Head>
     <Body>
       <Col>
         <MobileDiv />

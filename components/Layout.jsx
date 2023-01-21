@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react'
 import { NavBar, Togglebar, Footer, Coffee, ScrollToTop } from '../components';
 import { Container } from './sharedstyles';
 import Script from "next/script";
+import Head from 'next/head'
 
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <Head>
+      <title>Filipinos Aspirants to Canada</title>
+      <meta name="Filipinos Aspirants to Canada" content="by Israel Panopio" />
+      <link rel="icon" href="/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Noto+Sans&display=swap" rel="stylesheet" />
+      <meta property="fb:app_id" content="366180864923538" />
+      <meta property="fb:admins" content="empoyan"/>
+    </Head>
       <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-31HF0Y6JYY"/>
       <Script
         id='google-analytics'
