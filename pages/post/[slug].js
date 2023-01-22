@@ -80,4 +80,7 @@ const Comments = styled.div`
 const MobileDiv = styled.div`
   height: 10px;
   display: block;
+  
+  @media screen and (min-width: 900px) {
+  height: 25px;
 `
