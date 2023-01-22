@@ -13,9 +13,9 @@ const PostDetail = ({ post }) => {
       <FeaturedImage src={post.featuredImage.url} />
       <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author>
 
-      {post.tableOfContents ? <TableContents post={post} /> : ""}
-
       <h1 id="intro">{post.title}</h1>
+
+      {post.tableOfContents ? <TableContents post={post} /> : ""}
 
         <div><RichText content={post.content.raw} /></div>
         {post.contentb ? <>

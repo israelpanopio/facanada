@@ -34,12 +34,13 @@ const TableIcon = styled.div`
     display: inline-block;
     ${'' /* transform: translate(-100%, 25%); */}
     cursor: pointer;
-    margin: 0;
+    margin: -25px 0 0 0;
 `
 
 const TableOfContens = styled.div`
   display: ${({ openTable }) => (openTable ? 'block' : 'none')};
   margin-top:0;
+  margin-bottom: 20px;
 `
 
 const LinkS = styled(Link)`
