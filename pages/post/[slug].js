@@ -3,9 +3,8 @@ import { getPosts, getPostDetails } from '../../services';
 import { useRouter } from 'next/router';
 import styled from 'styled-components'
 import { Body, Col, SidebarNav } from '../../components/sharedstyles';
-import { MobileSocial, PostDetail, Widget } from '../../components';
+import { GoogleAds, MobileSocial, PostDetail, Widget } from '../../components';
 import Head from 'next/head'
-import Script from "next/script";
 
 const PostDetails = ({ post }) => {
   const router = useRouter();

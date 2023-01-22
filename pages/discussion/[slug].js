@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { DiscussionCard, } from '../../components';
+import { DiscussionCard, GoogleAds, } from '../../components';
 import { TogglePageLeft } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getLatests } from '../../services';
@@ -28,7 +28,11 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
     <Cntr>
       <CategoryTitle>{category.name}</CategoryTitle>
       {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><u><FaRegHandPointLeft /> Back to Guides</u></Link></TogglePageLeft>}
-      {pagePosts.map((post, index) => (
+      {pagePosts.slice(0,5).map((post, index) => (
+        <DiscussionCard key={index} post={post.node} title={post.node.title} />
+      ))}
+      <div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"top"} /></div>
+      {pagePosts.slice(5,10).map((post, index) => (
         <DiscussionCard key={index} post={post.node} title={post.node.title} />
       ))}
       <Page>  Page {page} of {numberPages} </Page>
@@ -44,6 +48,7 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
           </PageLink>
         }
       </Pages>
+        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
     </Cntr>
   )
 }

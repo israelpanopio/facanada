@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react'
-import { PostCard } from '../../components';
+import { GoogleAds, PostCard } from '../../components';
 import { Row, TogglePageRight } from '../../components/sharedstyles';
 import { useRouter } from 'next/router';
 import { getCategories, getFeaturedCategoryPost } from '../../services';
@@ -45,6 +45,7 @@ return (
             </PageLink>
             }
           </Pages>
+        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
     </Cntr>
   )
 }

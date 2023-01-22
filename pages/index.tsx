@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaCanadianMapleLeaf, FaAngleRight } from 'react-icons/fa';
 import { Body, Col, SidebarNav } from '../components/sharedstyles'
-import { PostCard, Welcome, Widget } from '../components';
+import { GoogleAds, PostCard, Welcome, Widget } from '../components';
 import { getFeaturedPosts } from '../services';
 
 export default function Home({ posts }) {
@@ -20,6 +20,7 @@ export default function Home({ posts }) {
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />
         ))} 
+        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
         {/* <h2>Go to Frequently Asked Questions <FaAngleRight /></h2> */}
       </Col>
       <Col>

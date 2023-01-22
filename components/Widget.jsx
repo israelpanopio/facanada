@@ -23,7 +23,7 @@ const Widget = ({ categories, slug }) => {
   return (<Div>
     <HideAds>
       {slug ? 
-        <div id="ezoic-pub-ad-placeholder-122">
+        <div id="ezoic-pub-ad-placeholder-123">
           <GoogleAds ads={"top"} /> 
         </div>
       : ''}
