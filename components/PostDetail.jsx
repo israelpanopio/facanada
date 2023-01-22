@@ -94,7 +94,7 @@ const Post = styled.div`
 
 const FeaturedImage = styled.img`
 display: block;
-margin: 0.5rem auto ;
+margin: 2rem auto 0.5rem auto ;
 display: center;
 max-width: 95%;
 
@@ -104,6 +104,7 @@ max-width: 95%;
 
     @media (orientation: portrait) {
         max-height: 90vh;
+        margin: 0.5rem auto;
         
     }
 `
