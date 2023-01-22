@@ -13,7 +13,7 @@ const GoogleAds = ({ads}) => {
   }, []);
 
   if (!ads) {
-    return (<>
+    return (<div style={{margin:"15px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", margin:"auto"}}
         data-ad-client="ca-pub-4841621324421656"
@@ -21,20 +21,20 @@ const GoogleAds = ({ads}) => {
         data-ad-format="auto"
         data-full-width-responsive="true">
       </ins>
-    </>
+    </div>
     )
   } else if (ads == "article") {  
-    return (
+    return (<div style={{margin:"15px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", textAlign:"center"}}
         data-ad-layout="in-article"
         data-ad-format="fluid"
         data-ad-client="ca-pub-4841621324421656"
         data-ad-slot="8361661008">
-      </ins>
+      </ins></div>
     )
   } else if (ads == "items") {  
-    return (
+    return (<div style={{margin:"15px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", textAlign:"center"}}
         data-ad-format="autorelaxed"
@@ -43,7 +43,7 @@ const GoogleAds = ({ads}) => {
         data-matched-content-columns-num="1"
         data-matched-content-ui-type="image_stacked"
         data-ad-slot="9483170983">
-      </ins>
+      </ins></div>
     )
   } else {  
   return (
