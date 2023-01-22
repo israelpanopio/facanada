@@ -20,7 +20,7 @@ export default function Home({ posts }) {
         {posts.map((post, index) => (
           <PostCard key={index} post={post.node} />
         ))} 
-        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
+        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={""} /></div>
         {/* <h2>Go to Frequently Asked Questions <FaAngleRight /></h2> */}
       </Col>
       <Col>
