@@ -6,6 +6,7 @@ import { getCategories, getLatests } from '../../services';
 import { FaRegHandPointLeft, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 import { Cntr, CategoryTitle, Page, Pages, PageLink } from '../category/[slug]';
+import { DesktopAds, MobileAds } from '../../components/PostDetail';
 
 const DiscussionDetails = ({ category, posts, pageSize }) => {
   const router = useRouter();
@@ -48,7 +49,8 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
           </PageLink>
         }
       </Pages>
-        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
+        <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
+        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds>
     </Cntr>
   )
 }

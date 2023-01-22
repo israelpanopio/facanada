@@ -123,14 +123,14 @@ const PageLink = styled.a`
   box-sizing: border-box;
 `
 
-const MobileAds = styled.div`
+export const MobileAds = styled.div`
   
   @media screen and (min-width: 900px) {
     display: none;
 }
 `
 
-const DesktopAds = styled.div`
+export const DesktopAds = styled.div`
     @media screen and (max-width: 900px) {
     display: none;
 }

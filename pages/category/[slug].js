@@ -6,6 +6,7 @@ import { getCategories, getFeaturedCategoryPost } from '../../services';
 import styled from 'styled-components';
 import { FaRegHandPointRight, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
+import { DesktopAds, MobileAds } from '../../components/PostDetail';
 
 const CategoryDetails = ({ posts, category, pageSize }) => {
   const router = useRouter();
@@ -45,7 +46,8 @@ return (
             </PageLink>
             }
           </Pages>
-        <div id="ezoic-pub-ad-placeholder-123"><GoogleAds /></div>
+        <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
+        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds>
     </Cntr>
   )
 }
