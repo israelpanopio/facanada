@@ -24,11 +24,11 @@ const PostDetail = ({ post }) => {
         </> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0 ? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad0 ? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds style={{margin:"20px auto"}} ads={"infeed"} /></div> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
-            {post.ads && post.ad1 ? <MobileAds><div id="ezoic-pub-ad-placeholder-110"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
+            {post.ads && post.ad1 ? <MobileAds><div id="ezoic-pub-ad-placeholder-110"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content1b.raw.children} />
           </> : ''}
 
@@ -37,16 +37,16 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content2.raw.children} />
           </div> : ''}
         {post.content2b ? <>
-            {post.ads && post.ad2 ? <MobileAds><div id="ezoic-pub-ad-placeholder-112"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
+            {post.ads && post.ad2 ? <MobileAds><div id="ezoic-pub-ad-placeholder-112"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content2b.raw.children} />
           </> : ''}
 
         {post.content3 ? <div id="three">
-            {post.ads && post.ad2 ? <div id="ezoic-pub-ad-placeholder-113"><GoogleAds ads={"top"} /></div> : ''}
+            {post.ads && post.ad2 ? <div id="ezoic-pub-ad-placeholder-113"><GoogleAds style={{margin:"20px auto"}}  ads={"top"} /></div> : ''}
           <RichText content={post.content3.raw.children} />
           </div> : ''}
         {post.content3b ? <>
-            {post.ads && post.ad3 ? <MobileAds><div id="ezoic-pub-ad-placeholder-114"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
+            {post.ads && post.ad3 ? <MobileAds><div id="ezoic-pub-ad-placeholder-114"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content3b.raw.children} />
           </> : ''}
 
@@ -55,16 +55,16 @@ const PostDetail = ({ post }) => {
           <RichText content={post.content4.raw.children} />
           </div> : ''}
         {post.content4b ? <>
-            {post.ads && post.ad4 ? <MobileAds><div id="ezoic-pub-ad-placeholder-116"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
+            {post.ads && post.ad4 ? <MobileAds><div id="ezoic-pub-ad-placeholder-116"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content4b.raw.children} />
           </> : ''}        
 
         {post.content5 ? <div id="five">
-            {post.ads && post.ad4 ? <div id="ezoic-pub-ad-placeholder-117"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad4 ? <div id="ezoic-pub-ad-placeholder-117"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div> : ''}
           <RichText content={post.content5.raw.children} />
           </div> : ''}
         {post.content5b ? <>
-            {post.ads && post.ad5 ? <MobileAds><div id="ezoic-pub-ad-placeholder-118"><GoogleAds ads={"infeed"} /></div></MobileAds> : ''}
+            {post.ads && post.ad5 ? <MobileAds><div id="ezoic-pub-ad-placeholder-118"><GoogleAds style={{margin:"20px auto"}}  ads={"infeed"} /></div></MobileAds> : ''}
           <RichText content={post.content5b.raw.children} />
           </> : ''}
 

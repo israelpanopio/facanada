@@ -13,7 +13,7 @@ const GoogleAds = ({ads}) => {
   }, []);
 
   if (!ads) {
-    return (<div style={{margin:"15px auto"}}>
+    return (<div style={{margin:"20px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", margin:"auto"}}
         data-ad-client="ca-pub-4841621324421656"
@@ -24,7 +24,7 @@ const GoogleAds = ({ads}) => {
     </div>
     )
   } else if (ads == "article") {  
-    return (<div style={{margin:"15px auto"}}>
+    return (<div style={{margin:"20px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", textAlign:"center"}}
         data-ad-layout="in-article"
@@ -34,7 +34,7 @@ const GoogleAds = ({ads}) => {
       </ins></div>
     )
   } else if (ads == "items") {  
-    return (<div style={{margin:"15px auto"}}>
+    return (<div style={{margin:"20px auto"}}>
       <ins className="adsbygoogle"
         style={{display:"block", textAlign:"center"}}
         data-ad-format="autorelaxed"
