@@ -24,7 +24,7 @@ const PostDetail = ({ post }) => {
         </> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad0 ? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds ads={"infeed"} /></div> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
