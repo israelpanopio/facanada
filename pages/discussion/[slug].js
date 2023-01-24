@@ -29,13 +29,13 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
     <Cntr>
       <CategoryTitle>{category.name}</CategoryTitle>
       {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><u><FaRegHandPointLeft /> Back to Guides</u></Link></TogglePageLeft>}
-      {pagePosts.slice(0,5).map((post, index) => (
+      {pagePosts.map((post, index) => (
         <DiscussionCard key={index} post={post.node} title={post.node.title} />
       ))}
-      <div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"top"} /></div>
+      {/* <div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"top"} /></div>
       {pagePosts.slice(5,10).map((post, index) => (
         <DiscussionCard key={index} post={post.node} title={post.node.title} />
-      ))}
+      ))} */}
       <Page>  Page {page} of {numberPages} </Page>
       <Pages page={page}>
         {page == 1 ? '' :
@@ -49,8 +49,8 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
           </PageLink>
         }
       </Pages>
-        <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
-        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds>
+        {/* <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
+        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds> */}
     </Cntr>
   )
 }

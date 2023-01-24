@@ -46,8 +46,8 @@ return (
             </PageLink>
             }
           </Pages>
-        <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
-        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds>
+        {/* <DesktopAds><div id="ezoic-pub-ad-placeholder-123"><GoogleAds ads={"article"} /></div></DesktopAds>
+        <MobileAds><div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div></MobileAds> */}
     </Cntr>
   )
 }
