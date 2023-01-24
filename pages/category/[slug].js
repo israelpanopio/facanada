@@ -63,7 +63,7 @@ export async function getStaticProps({ params }) {
       posts: posts.edges,
       pageSize: posts.pageInfo.pageSize,
       category: theCategories.find((({ slug }) => slug === params.slug )) },
-      revalidate: 1,
+      revalidate: 3600,
   };
 }
 
