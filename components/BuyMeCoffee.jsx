@@ -3,11 +3,18 @@ import styled from 'styled-components'
 
 const BuyMeCoffee = () => {
   return (
-    <a style={{textDecoration: "none"}} href="https://www.buymeacoffee.com/israelpanopio" target="_blank" >
+    <A style={{textDecoration: "none"}} href="https://www.buymeacoffee.com/israelpanopio" target="_blank" >
+    <>
+    <Me src="/me.jpg" />
+    <div><P>I hope you found valuable information in our website. 
+      I've been investing a lot of my time to create this website and help as much as I can.</P><P>
+      I want to keep doing this for as long as I can! Your support in buying me a coffee will be highly appreciated. 
+      </P>
+    </div></>
     <MobileCoffee>
       Support this website. Buy me a coffee.
     </MobileCoffee>
-    </a>
+    </A>
   )
 }
 
@@ -25,12 +32,33 @@ color: black;
 font-family: Cookie,sans-serif;
 font-size: 25px;
 box-sizing: border-box;
-margin-bottom: 10px;
+margin: 10px auto;
 
 &:hover {
   color: black;
   box-shadow: 5px 5px 10px grey;
   margin-top: -2px;
   margin-bottom: 12px;
+}
+`
+
+const Me = styled.img`
+  height: 100px;
+float: left; 
+margin-right: 10px
+`
+
+const P = styled.p`
+font-size: 15px;
+line-height: 18px;
+
+&:hover {
+  color: black;
+}
+`
+
+const A = styled.a`
+&:hover {
+  color: black;
 }
 `
