@@ -35,7 +35,7 @@ const Widget = ({ categories, slug }) => {
             {relatedPosts.map((post, index ) => (<>
               <WidgetCard key={index} post={post} title={post.title} />
             </>))}
-          <div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div>
+          {/* <div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div> */}
         </RelatedPosts>
       </Sidebar>
   </Div>
@@ -52,8 +52,9 @@ const Div = styled.div`
 const Sidebar = styled.nav`
   margin-top: 0;
   z-index: 5;
-  height: ${({ slug }) => (slug ? 'calc(100vh - 80px - 15vh)' : `calc(100vh - 80px)`)};
-  overflow-y: auto;
+  ${'' /* height: ${({ slug }) => (slug ? 'calc(100vh - 80px - 15vh)' : `calc(100vh - 80px)`)}; */}
+  ${'' /* overflow-y: auto; */}
+  overflow-y: visible;
   overflow-x: hidden;
 
   @media screen and (max-width: 900px) {
