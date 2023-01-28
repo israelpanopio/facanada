@@ -24,8 +24,9 @@ export default function Home({ posts }) {
         {/* <h2>Go to Frequently Asked Questions <FaAngleRight /></h2> */}
       </Col>
       <Col>
+        <Widget slug={""} categories={[]} />
         <SidebarNav>
-          <Widget slug={""} categories={[]} />
+          <div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div>
         </SidebarNav>
       </Col>
     </Body>
