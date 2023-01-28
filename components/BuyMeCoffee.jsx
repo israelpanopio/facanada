@@ -8,7 +8,7 @@ const BuyMeCoffee = () => {
     <Me src="/me.jpg" />
     <div><P>I hope you found valuable information in our website. 
       I've been investing a lot of my time to create this website and help as much as I can.</P><P>
-      I want to keep doing this for as long as I can! Your support in buying me a coffee will be highly appreciated. 
+      I want to do this for as long as I can! Your support in buying me a coffee can help me achieve this and help more people.
       </P>
     </div></>
     <MobileCoffee>
