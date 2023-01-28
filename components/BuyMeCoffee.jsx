@@ -37,7 +37,7 @@ margin: 10px auto;
 &:hover {
   color: black;
   box-shadow: 5px 5px 10px grey;
-  margin-top: -2px;
+  margin-top: 8px;
   margin-bottom: 12px;
 }
 `
