@@ -27,6 +27,7 @@ return (<>
         <PostDetail post={post} />
       </Col>
       <Col>
+        <MobileDiv />
         <Widget slug={post.slug} categories={post.categories.map((category) => category.slug)} />
         <SidebarNav>
           <div id="ezoic-pub-ad-placeholder-120"><GoogleAds ads={"items"} /></div>
