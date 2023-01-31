@@ -27,6 +27,7 @@ const DiscussionDetails = ({ category, posts, pageSize }) => {
 
   return (
     <Cntr>
+    <img style={{display:"none"}} src="/logo.png" />
       <CategoryTitle>{category.name}</CategoryTitle>
       {category.slug === "news" ? "" : <TogglePageLeft><Link href={`/category/${category.slug}?page=1`}><u><FaRegHandPointLeft /> Back to Guides</u></Link></TogglePageLeft>}
       {pagePosts.map((post, index) => (

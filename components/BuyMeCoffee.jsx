@@ -5,7 +5,7 @@ const BuyMeCoffee = () => {
   return (
     <A style={{textDecoration: "none"}} href="https://www.buymeacoffee.com/israelpanopio" target="_blank" >
     <>
-    <Me src="/me.jpg" />
+    <Me src="/me.png" />
     <div><P>I hope you found valuable information in our website. 
       I've been investing a lot of my time to create this website and help as much as I can.</P><P>
       I want to do this for as long as I can! Your support in buying me a coffee can help me achieve this and help more people.

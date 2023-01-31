@@ -11,6 +11,7 @@ export default function About() {
   return (
     <Body>
       <Col>
+        <img style={{display:"none"}} src="/logo.png" />
         <CategoryTitle>About Us</CategoryTitle>
         <TogglePageLeft><Link  href="/"><FaRegHandPointLeft /> Back to Home</Link></TogglePageLeft>
         <AboutUs />

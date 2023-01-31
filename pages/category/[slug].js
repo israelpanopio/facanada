@@ -27,6 +27,7 @@ if (router.isFallback) {
 
 return (
     <Cntr>
+    <img style={{display:"none"}} src="/logo.png" />
       <CategoryTitle>{category.name}</CategoryTitle>
       <TogglePageRight><Link href={`/discussion/${category.slug}?page=1`}><u>See Discussions <FaRegHandPointRight /></u></Link></TogglePageRight>
       <Row>{pagePosts.map((post, index ) => (
