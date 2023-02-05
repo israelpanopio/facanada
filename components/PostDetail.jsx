@@ -18,13 +18,11 @@ const PostDetail = ({ post }) => {
       {post.tableOfContents ? <TableContents post={post} /> : ""}
 
         <div><RichText content={post.content.raw} /></div>
-        {post.contentb ? <>
-            {post.ads ? <MobileAds><div id="ezoic-pub-ad-placeholder-108"><GoogleAds ads={"article"} /></div></MobileAds> : ''}
-          <RichText content={post.contentb.raw.children} />
-        </> : ''}
+        {post.ads ? <MobileAds><div id="ezoic-pub-ad-placeholder-108"><GoogleAds ads={"article"} /></div></MobileAds> : ''}
+        {post.contentb ? <RichText content={post.contentb.raw.children} /> : ''}
 
         {post.content1 ? <div id="one">
-            {post.ads && post.ad0 ? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds style={{margin:"20px auto"}} ads={"infeed"} /></div> : ''}
+            {post.ads && post.ad0 && post.contentb ? <div id="ezoic-pub-ad-placeholder-109"><GoogleAds style={{margin:"20px auto"}} ads={"infeed"} /></div> : ''}
           <RichText content={post.content1.raw.children} />
           </div> : ''}
         {post.content1b ? <>
