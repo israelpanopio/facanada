@@ -52,7 +52,6 @@ const Layout = ({ children }) => {
         strategy="beforeInteractive"
         async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      
       <Togglebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
       <Container>
@@ -61,7 +60,7 @@ const Layout = ({ children }) => {
       <Coffee />
       <ScrollToTop />
       <Footer />
-      <Script type="text/javascript" src="https://s.skimresources.com/js/231084X1713494.skimlinks.js"></Script>
+      <Script type="text/javascript" src="https://s.skimresources.com/js/231084X1713494.skimlinks.js" />
     </>
   )
 }

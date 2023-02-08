@@ -85,8 +85,6 @@ const Content = () => {
   
   <h1>Contact Us</h1>
   <p>If you have any questions about this Privacy Policy, please contact us:</p>
-  <ul>
-    <li>leave a comment in one of our posts</li>
-  </ul>
+    <p><u style={{textDecoration: "none"}}><a href="/contact">Contact Me</a></u></p>
 </>)}
 
