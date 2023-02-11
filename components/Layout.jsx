@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     <Head>
       <title>Filipinos Aspirants to Canada</title>
       <meta name="Filipinos Aspirants to Canada" content="by Israel Panopio" />
-      <meta name='ir-site-verification-token' value='438025658'></meta>
+      <meta name='ir-site-verification-token' value='443430322' />
       <link rel="icon" href="/favicon.ico" />
       <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Noto+Sans&display=swap" rel="stylesheet" />
       <meta property="fb:app_id" content="366180864923538" />
