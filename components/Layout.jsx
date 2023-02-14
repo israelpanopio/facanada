@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
       <Coffee />
       <ScrollToTop />
       <Footer />
-      <Script type="text/javascript" src="https://s.skimresources.com/js/231084X1713494.skimlinks.js" />
+      <Script type="text/javascript" src="https://s.skimresources.com/js/232430X1714974.skimlinks.js"></Script>
     </>
   )
 }
