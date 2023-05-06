@@ -250,7 +250,15 @@ export const getPosts = async () => {
             postsConnection(first: 999) {
                 edges {
                     node {
+                    id
+                    title
                     slug
+                    featuredImage {
+                      url
+                    }
+                    content {
+                      markdown
+                    }
                     }
                 }
             }
