@@ -12,8 +12,8 @@ const WidgetCard = ({ post }) => {
         backgroundImage: `url('${post.featuredImage.url}')`,
         textDecoration:"none"
     }}>
-    <Title><h5>{post.title}</h5></Title>
     <Author><FaCalendarWeek />{moment(post.publishedAt).format('MMM DD, YYYY')}</Author></ImagePreview>
+    <WidgetTitle>{post.title}</WidgetTitle>
   </PostCardItem>)
 }
 
@@ -34,20 +34,8 @@ const PostCardItem = styled.div`
 }
 `
 
-const Title = styled.div`
-  margin: auto;
-  max-width: 90%;
-  text-align: center;
-  background-color: white;
-  opacity: 80%;
-    overflow-wrap: break-word;
-  transform: translateY(-50%);
-  border-radius: 10px;
-  text-decoration: none; 
-`
-
 const ImagePreview = styled.a`
-  padding-top: 20%;
+  padding-top: 50%;
   background-size: cover;
   background-position: center;
   margin: 0px;
@@ -55,4 +43,9 @@ const ImagePreview = styled.a`
   
   &:hover{
   color: inherit;}
+`
+
+const WidgetTitle = styled.h5`
+  margin: 0;
+  max-width: 90%;
 `
